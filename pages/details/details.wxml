@@ -53,10 +53,10 @@
     <view class="btm"></view>
     <view class="bottom">
         <text class="rizujin">￥{{rent_day}}元/天</text>
-        <view class="goumai">
-            <navigator url="/pages/order/order" hover-class="navigator-hover" open-type="navigate">
+        <view class="goumai" bind:tap="clickToOrder">
+            <!-- <navigator url="/pages/order/order" hover-class="navigator-hover" open-type="navigate"> -->
                 一键租凭
-            </navigator>
+            <!-- </navigator> -->
         </view>
     </view>
 </view>

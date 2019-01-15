@@ -20,8 +20,10 @@ App({
     this.getUserLogin();
     this.getUserLocation();
   },
-  apiUrl: 'https://batu.bchltech.cn/BaTuMapping/app/',
-  apiUrl2: 'https://batu.bchltech.cn/BaTuMapp/app/',
+  // apiUrl: 'https://batu.bchltech.cn/BaTuMapping/app/',
+  apiUrl: 'http://192.168.1.131:8080/BaTuMapping/app/',
+  // apiUrl2: 'https://batu.bchltech.cn/BaTuMapp/app/',
+  apiUrl2: 'http://192.168.1.131:8080/BaTuMapping/app/',
 
   getUserLogin: function () {
     var that = this;

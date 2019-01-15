@@ -1,3 +1,5 @@
+var util = require("../../utils/util.js");
+var app = getApp();
 Page({
     data: {
         productID: '', //商品id
@@ -50,12 +52,46 @@ Page({
     onHide: function () {
 
     },
-    tabclick:function (params) {
-      if(this.data.activeIndex!=params.currentTarget.dataset.index){
-        this.setData({
-            activeIndex:params.currentTarget.dataset.index
-        })
-      }
+    tabclick: function (params) {
+        if (this.data.activeIndex != params.currentTarget.dataset.index) {
+            this.setData({
+                activeIndex: params.currentTarget.dataset.index
+            })
+        }
+    },
+
+    // 跳转到下单页面
+    clickToOrder: function (params) {
+        // 验证是否实名认证
+
+        var url = `${app.apiUrl}auth`;
+        var that = this;
+
+        util.req(url, 'GET', {}, function (data) {
+
+            if (data.ret == 0) {
+                var phoneAuth = data.body.phoneAuth,
+                    realnameAuth = data.body.realnameAuth,
+                    enterpriseAuth = data.body.enterpriseAuth;
+
+                if (!(phoneAuth == 1 && realnameAuth == 1)) {
+                    // 未实名认证
+                    wx.navigateTo({
+                        url: '/pages/cert/cert',
+                    })
+                }
+
+                if (phoneAuth == 1 && realnameAuth == 1) {
+                    wx.navigateTo({
+                        url: "/pages/order/order"
+                    })
+                }
+            } else {
+                util.toast(data.body);
+            }
+        }, function () {
+            util.toast('接口请求失败')
+        });
     },
     onShareAppMessage: function () {
 

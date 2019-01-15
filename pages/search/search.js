@@ -73,7 +73,7 @@ Page({
   },
 
   onLoad: function (options) {
-
+    currentPage = 1;
    
     // 获取当前的时间
     var date = new Date();
@@ -328,6 +328,7 @@ Page({
 
   // 获取默认的仪器列表(传经纬度)
   getProductList: function () {
+    return;
     var that = this;
     var lat = app.globalData.latitude || that.data.latitude || 0;
     var lon = app.globalData.longitude || that.data.longitude || 0;
@@ -364,6 +365,16 @@ Page({
   },
 
   proclick: function (params) {
+
+    wx.setStorage({
+      key:'productInfo',
+      data:this.data.productInfo[params.currentTarget.dataset.index]
+    })
+    wx.navigateTo({
+      url:"/pages/details/details"
+    })
+    return;
+
     // console.log(this.data.productInfo[params.currentTarget.dataset.index]);
     // 先检查是否个人认证
     var url = `${app.apiUrl}auth`;
@@ -608,6 +619,7 @@ Page({
       city: that.data.city
     };
     util.req(url, 'GET', data,  (data)=> {
+      console.log(data);
       if (data.ret == 0) {
         if (currentPage == data.count) {
           that.setData({

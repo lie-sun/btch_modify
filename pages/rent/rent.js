@@ -51,7 +51,7 @@ Page({
     loadMoreReco: false,
     showFlag: false,
     authFlag: false,
-    selectedItem: 0,
+    selectedItem: 0,//取货方式
     startTime: '', //起租时间
     startTime1: '', //结束时间的选择开始时间
     endTime: '', //结束时间

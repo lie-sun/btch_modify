@@ -39,7 +39,7 @@
             <image src="{{item.img}}" class="proimg" />
             <view class="infos">
               <view class="names">
-                {{item.factory}}
+                {{item.factory}}{{item.model}}
                 <text class="yajin">押金{{item.deposit}}元</text>
               </view>
               <view class="price">￥{{item.rent_day}}/台 <text class="rzj">(日租金)</text></view>
