@@ -1,0 +1,74 @@
+<!--pages/rent/rent-detail/rent-detail.wxml-->
+<view class='container'>
+  <scroll-view scroll-y>
+    <swiper class='swiper-section' indicator-dots indicator-color='#bbb' indicator-active-color='#fff' style='height: 480rpx;'>
+      <block wx:for="{{goods.img_url}}" wx:key="*this">
+        <swiper-item>
+          <image src='{{item}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- goods info -->
+    <view class='goods-info'>
+      <view class='goods-name'>{{goods.factory}}{{goods.model}}</view>
+      <view class='goods-rent_count'>
+        <text class='goods-rent'><text class='goods-day_rent'><text class='mark'>￥</text>{{goods.deposit}}元/台</text></text>
+        <text class='goods-count'>数量：{{goods.number}}台</text>
+      </view>
+      <view class='goods-deposit_addr'>
+        <text class='goods-deposit'>出厂：{{goods.date_year}}</text>
+        <text class='goods-addr'>{{goods.city}}</text>
+      </view>
+      <view class='contact'>
+        <text>联系方式：</text>
+        <text>{{goods.mobile}}</text>
+      </view>
+    </view>
+    <!-- other goods info tab -->
+    <view class="page">
+        <view class="page__bd">
+            <view class="weui-tab">
+                <view class="weui-navbar">
+                    <block wx:for="{{tabs}}" wx:key="*this">
+                        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                            <view class="weui-navbar__title">{{item}}</view>
+                        </view>
+                    </block>
+                    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+                </view>
+                <view class="weui-tab__panel">
+                    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                      <view class='item'><text>产品类型：</text>{{goods.type}}</view>
+                      <view class='item'><text>生产厂家：</text>{{goods.factory}}</view>
+                      <view class='item'><text>产品型号：</text>{{goods.model}}</view>
+                      <view class='item'><text>所在城市：</text>{{goods.city}}</view>
+                      <view class='item'><text>取货方式：</text>{{goods.pick_up_type}}</view>
+                      <view class='item'><text>取货地址：</text>{{goods.pick_up_address}}</view>
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                      <view class='item'>
+                        <image src='{{goods.prop}}' mode='widthFix' style='width:100%;display:block;'></image>
+                      </view>
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                      <view class='item'>
+                        <image src='{{goods.attr}}' mode='widthFix' style='width:100%;display:block;'></image>
+                      </view>
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                      <view class='desc'>为方便各位测绘同仁，“巴图测绘”面向全国，收集仪器出租信息，是您仪器出租信息发布，租赁信息获取和寻找的最佳选择。
+                      </view>
+                      <view class='desc'>本平台发布的信息均为仪器设备持有者发布，平台只负责展示，并做了部分优化工作，但并不代表任何承诺。</view>
+                      <view class='desc'>具体的仪器详情及交易，仍需租赁双方进行再次沟通确认，由于双方沟通不当而产生的一切纠纷均与平台无关。</view>
+                    </view>
+                </view>
+                <!-- contact button -->
+                <view class='contact-btn'>
+                  <!-- <button class='goBack' bindtap='goBack'>返回</button> -->
+                  <button class='dail-number' bindtap='dailPhoneNumber' hover-class='btn-hover'>拨打电话</button>
+                </view>
+            </view>
+        </view>
+    </view>
+  </scroll-view>
+</view>

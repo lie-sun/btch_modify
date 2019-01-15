@@ -1,0 +1,15 @@
+<!--pages/quick-guide/quick-guide.wxml-->
+<view class='container'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="#ededed" indicator-active-color="#3781d5" bindchange="getImageIndex" current="{{current}}" style='height:{{height}}px'>
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" bindload='setContainerHeight'/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='btn-wrapper'>
+    <button class='btn' bindtap='goNext' hidden='{{btnChange}}'>下一步</button>
+    <button class='btn' bindtap='goMiniPro' hidden='{{!btnChange}}'>进入小程序</button>
+  </view>
+</view>

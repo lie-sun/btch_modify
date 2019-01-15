@@ -1,0 +1,8 @@
+<!--pages/mall/sort/sort.wxml-->
+<view class='sort'>
+  <view class='sort-wrapper'>
+    <view class='sort-panel'>
+      <view class='item {{activeIndex==index?"active":""}}' bindtap='bindProductType' wx:for="{{sort}}" wx:key="{{item.id}}" data-index="{{index}}">{{item.name}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/certification/phone-num/phone-num.wxml-->
+<view class='container'>
+  <view class='wrapper'>
+    <form bindsubmit="formSubmit">
+      <view class='form-group'>
+          <view class='input-control' bindtap='getPhoneFocus'>
+            <view class='input-wrapper'>
+              <!-- <image src='/images/icon/icon-phone.png' class='icon icon-phone'></image> -->
+              <input class='phone-num weui-input' focus='{{phoneFocus}}' name="userPhoneNum" bindinput='getPhoneNum' maxlength="11" type='number' placeholder='请输入手机号码'/>
+            </view>
+          </view>
+          <view class='input-control' bindtap='getCodeFocus'>
+            <view class='input-wrapper'>
+              <!-- <image src='/images/icon/icon-code.png' class='icon icon-code'></image> -->
+              <input class='phone-code weui-input' focus='{{codeFocus}}' name="userPhoneCode" maxlength="6" type='number' placeholder='请输入短信验证码'/>
+            </view>
+            <view class='send-wrapper'>
+              <view class='send-code' catchtap='sendCheckCode' hidden='{{!sendCodeBtn}}'>发送验证码</view>
+              <view class='send-code second' hidden='{{sendCodeBtn}}'>{{second}}秒后可重发</view>
+            </view>
+          </view>
+      </view>
+      <view class='save-btn'>
+        <button type='primary' hover-class="btn-hover" loading='{{saveBtnLoading}}' disabled='{{saveBtnDisabled}}' formType='submit'>提交</button>
+      </view>
+    </form>
+  </view>
+</view>

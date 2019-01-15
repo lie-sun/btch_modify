@@ -1,0 +1,2 @@
+/* pages/answer/special/section/section.wxss */
+@import '../../order/order.wxss';

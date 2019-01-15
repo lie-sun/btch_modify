@@ -1,0 +1,22 @@
+/* pages/user/service-site/auth-company/auth-company.wxss */
+@import '../auth-proxy/auth-proxy.wxss';
+.auth-content .auth .auth-box{
+  width: 217px;
+  height: 137px;
+  margin: 0 auto;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #868686;
+  font-size: 28rpx;
+  border: 1px dashed #868686;
+}
+
+.auth-content .auth .auth-box image{
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-bottom: 16rpx;
+}

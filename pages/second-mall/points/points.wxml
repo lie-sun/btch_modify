@@ -1,0 +1,16 @@
+<!--pages/rent/points/points.wxml-->
+<view class='container'>
+  <view class='content'>
+    <image src='/images/rent/search-result.png'></image>
+    <view class='success'>扣除成功</view>
+    <view class='tip'>您可以在我的订单查看详情</view>
+    <!-- contact button -->
+    <view class='enter-rent'>
+      <button class='btn btn-dial' bindtap="dialPhone" hover-class='btn-hover-dial'>立即拨打电话</button>
+    </view>
+    <navigator url='../../user/user-publish/second-publish/second-publish' open-type='redirect' class='enter-rent' hover-class='none'>
+      <button class='btn' hover-class='btn-hover'>进入我的订单</button>
+    </navigator>
+    <navigator url='/pages/index/index' open-type='switchTab' class='back-home' hover-class='none'>返回首页</navigator>
+  </view>
+</view>

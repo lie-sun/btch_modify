@@ -1,0 +1,208 @@
+/* pages/user/service-site/add/add.wxss */
+page,
+.container{
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+.ad-pic image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.service-content{
+  padding: 0 15px;
+}
+
+.service-content .service-item{
+  margin-bottom: 24rpx;
+  background-color:#fff;
+  border-radius:8px;
+  box-shadow:2px 2px 4px rgba(0,0,0,0.2);
+  padding: 20rpx;
+  position: relative;
+}
+
+.service-content .service-item .service-pic{
+  width: 18px;
+  height: 17px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 80rpx;
+  z-index: 99;
+}
+
+.service-content .service-item:first-child{
+  margin-top: 24rpx;
+}
+
+.service-content .service-item .service-title{
+  margin-bottom:20rpx;
+  font-size: 32rpx;
+  color: #FF3333;
+}
+
+.service-content .service-item .update{
+  color: #003366;
+}
+
+.service-content .address-item,
+.service-content .phone-item,
+.service-content .proxy-item{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-content .phone-item .send-code{
+  height:48rpx;
+  line-height:48rpx;
+  padding:2px 10px;
+  white-space: nowrap;
+  color:#fff;
+  font-size:28rpx;
+  border-radius:14px;
+  background-color:#ff3300;
+}
+
+.service-content .proxy-item .proxy-product,
+.service-content .proxy-item .auth-content{
+  width: 530rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.service-content .proxy-item .proxy-product .product,
+.service-content .proxy-item .auth-content .area{
+  padding: 0 10px;
+  margin-left: 10rpx;
+  margin-bottom:4rpx;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 6px;
+  background-color: #0099cc;
+}
+
+.service-content .proxy-item .auth-content .auth-area{
+  padding: 0 10px;
+  margin-left: 10rpx;
+  margin-bottom:4rpx;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 6px;
+  background-color: #ff9933;
+}
+
+.service-content .service-item .proxy-wrapper .tip{
+  margin-left:10rpx;
+  font-size:24rpx;
+  color:#353535;
+}
+
+.service-content .proxy-item .proxy-product .product.product-add{
+  background-color: #ff9933;
+}
+
+.service-content .service-item .address .content {
+  width: 480rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.service-content .service-item .content{
+  font-size: 28rpx;
+  color: #003366;
+  white-space: nowrap;
+}
+
+.service-content .service-item .content.gray{
+  color: #999;
+}
+
+.service-content .service-item .auth-box{
+  width: 217px;
+  height: 137px;
+  margin: 0 auto;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #868686;
+  font-size: 28rpx;
+  border: 1px dashed #868686;
+}
+
+.service-content .service-item .pic-box{
+  width: 435rpx;
+  height: 275rpx;
+  margin: 0 auto;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.service-content .service-item .pic-box .del_pic{
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  right: 0;
+}
+
+.service-content .service-item .pic-box image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.service-content .service-item .auth-box image{
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.button-wrapper{
+  padding: 20px 15px;
+  background-color: #fff;
+}
+
+.button-wrapper button{
+  width: 100%;
+  height: 45px;
+  margin: 0px;
+  line-height: 45px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.button-wrapper button.confirm{
+  margin-bottom: 20rpx;
+  background-color: #0099cc;
+}
+
+.button-wrapper button.btn-hover-confirm{
+  color: rgba(255,255,255,0.6);
+  background-color:#0085b1;
+}
+
+.button-wrapper button.add{
+  background-color: #0099cc;
+}
+
+.button-wrapper button.btn-hover-add{
+  color: rgba(255,255,255,0.6);
+  background-color:#0085b1;
+}

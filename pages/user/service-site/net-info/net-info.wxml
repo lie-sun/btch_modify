@@ -1,0 +1,88 @@
+<!--pages/user/service-site/net-info/net-info.wxml-->
+<view class='container'>
+  <!-- net list -->
+  <view class='service-content'>
+      <view class='service-item'>
+        <view class='service-title'>公司名称</view>
+        <view class='content'>{{netSiteInfo.company}}</view>
+      </view>
+
+      <view class='service-item address-item'>
+        <view class='address'>
+          <view class='service-title'>公司地址</view>
+          <view class='content'>{{netSiteInfo.addr}}</view>
+        </view>
+        <view class='content update' bindtap='updateAddress'>点击校准 ></view>
+      </view>
+
+      <view class='service-item phone-item'>
+        <view class='phone'>
+          <view class='service-title'>手机号码</view>
+          <input type='text' class='content' disabled='{{phoneDisabled}}' focus='{{phoneFocus}}' bindinput='getInputPhone' value='{{netSiteInfo.phone}}'></input>
+        </view>
+        <view class='content update' bindtap='updatePhone' hidden='{{update}}'>修改电话 ></view>
+        <view wx:if="{{update}}">
+          <view class='send-code' catchtap='sendCheckCode' hidden='{{!sendCodeBtn}}'>发送验证码</view>
+          <view class='send-code second' hidden='{{sendCodeBtn}}'>{{second}}秒后可重发</view>
+        </view>
+      </view>
+
+      <view class='service-item' wx:if="{{update}}">
+        <view class='service-title'>填写验证码</view>
+        <view class='content'>
+          <input type='text' placeholder='此处填写验证码' bindinput='inputPhoneCode'></input>
+        </view>
+      </view>
+
+      <view class='service-item proxy-item'>
+        <view class='proxy-wrapper'>
+          <view class='service-title'>代理产品</view>
+          <view class='content proxy-product'>
+            <view class='product' wx:for="{{proxyProduct}}" wx:key="*this" wx:for-item="proxyProduct">{{proxyProduct}}</view>
+          </view>
+        </view>
+        <view class='content update' bindtap='goNewAddNet'>添加认证 ></view>
+      </view>
+
+      <view class='service-item'>
+        <view class='service-title'>营业执照</view>
+        <view class='auth-box' wx:if="{{!netSiteInfo.license && !uploadPersonFlag}}" bindtap='uploadPersonAuthImage'>  
+          <image src='../../../../images/icon/icon-photo.png'></image>
+          <view>营业执照未上传</view>
+        </view>
+        <view wx:if="{{!netSiteInfo.license && uploadPersonFlag}}" class='pic-box' bindtap='previewPersonImage'>
+          <image catchtap='delUploadPersonPic' class='del_pic' src='../../../../images/hire/del.png'></image>
+          <image src='{{authPersonUrl}}'></image>
+        </view>
+        <view wx:if="{{netSiteInfo.license}}" class='pic-box' bindtap='previewLicenseImage'>
+          <image src='{{netSiteInfo.license}}'></image>
+        </view>
+      </view>
+
+      <view class='service-item'>
+        <view class='service-title'>资质证书</view>
+        <view class='auth-box' wx:if="{{qual.length == 0 && !uploadQualFlag}}" bindtap='uploadQualAuthImage'>  
+          <image src='../../../../images/icon/icon-photo.png'></image>
+          <view>资质证书未上传</view>
+        </view>
+        <view wx:if="{{qual.length == 0 && uploadQualFlag}}" class='pic-box' bindtap='previewQualImage'>
+          <image catchtap='delUploadQualPic' class='del_pic' src='../../../../images/hire/del.png'></image>
+          <image src='{{authQualUrl}}'></image>
+        </view>
+        <view wx:if="{{qual.length != 0}}" class='image-box'>
+          <image wx:for="{{qual}}" wx:key="*this" src='{{item}}' mode='widthFix' bindtap='previewQualListImage'></image>
+        </view>
+      </view>
+  </view>
+
+  <view class='button-wrapper'>
+    <button class='add' hover-class='btn-hover-add' bindtap='submitNetInfo' style='margin-bottom:20rpx;'>确认提交</button>
+  
+    <button class='share-btn' hover-class='btn-hover-share' open-type="share">
+      <image class="share-pic" src='../../../../images/icon/icon-share.png'></image>
+      <view class='share'>分享好友</view>
+    </button>
+  </view>
+</view>
+
+

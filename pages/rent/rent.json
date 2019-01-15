@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我要租赁",
+  "usingComponents": {
+    "product": "/components/product/product",
+    "noresult": "/components/noresult/noresult"
+  }
+}

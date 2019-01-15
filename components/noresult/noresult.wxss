@@ -1,0 +1,26 @@
+/* components/noresult/noresult.wxss */
+.result-wrapper{
+  padding-top: 120rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result-wrapper image{
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 10px;
+}
+.result-wrapper .result-text{
+  text-align: center;
+  font-family: "Microsoft YaHei"
+}
+.result-wrapper .result-text .no{
+  margin-bottom: 5px;
+  color: #353535;
+  font-size: 14px;
+}
+.result-wrapper .result-text .tip{
+  color: #888;
+  font-size: 12px;
+}

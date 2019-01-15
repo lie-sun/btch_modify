@@ -1,0 +1,47 @@
+@import "../../../hire/hire.wxss";
+.weui-cell .weui-cell__ft{
+  color: #333;
+}
+.weui-cell .upload-pic,
+.weui-cell .select-addr{
+  color: #bfbfbf;
+}
+.btn{
+  padding: 0 15px;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.btn button{
+  width: 100%;
+  height: 45px;
+  margin: 0px;
+  line-height: 45px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #3871a8;
+}
+.btn button.btn-hover{
+  color: rgba(255,255,255,0.6);
+  background-color: #1e64a7;
+}
+.picker-wrapper .tip, .product-info .placeholder, .weui-cell .weui-cell__ft {
+  color:#353535;
+}
+.pic-wrapper .example-pics{
+  padding: 12px 0;
+  margin-left: 15px;
+  position: relative;
+}
+.pic-wrapper .example-pics image{
+  width: 100px;
+  height: 120px;
+  margin-left: 10px;
+  display: block;
+  float: left;
+}
+.pic-wrapper .example-pics image:first-child{
+  margin-left: 0px;
+}

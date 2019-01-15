@@ -1,0 +1,12 @@
+<!--pages/protocol/protocol.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='item'>1、要留下租户的身份证复印件,登记工作单位,联系方式等一些个人基本信息。</view>
+    <view class='item'>2、签订一式两份的租房合同(签名并且按上手印)。需要注明的内容有每月或是每年租金多少,一般按季度或是年收取,也有少数是按月收取.</view>
+    <image class='pic' src='../../images/protocol/protocol_pic.jpg' mode='widthFix'></image>
+    <view class='item'>1、要留下租户的身份证复印件,登记工作单位,联系方式等一些个人基本信息。</view>
+    <view class='item'>2、签订一式两份的租房合同(签名并且按上手印)。需要注明的内容有每月或是每年租金多少,一般按季度或是年收取,也有少数是按月收取.</view>
+    <image class='pic' src='../../images/protocol/protocol_ad.png' mode='widthFix'></image>
+  </view>
+  <view class='read'>我已阅读</view>
+</view>

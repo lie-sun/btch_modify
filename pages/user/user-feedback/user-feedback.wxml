@@ -1,0 +1,46 @@
+<!--pages/user/user-feedback/user-feedback.wxml-->
+<view class='container'>
+  <view class='content'>
+    <!-- feedback submit -->
+    <form class='form'>
+      <view class='view-wrapper'>
+          <form bindsubmit='formSubmit'>
+            <view class='view'>
+              <textarea name='userView' value='{{userView}}' bindinput='inputUserView' placeholder='此处填写您的意见' maxlength='150'></textarea>
+            </view>
+            <!-- image -->
+            <view class='pic-wrapper'>
+              <upload OSSKey="{{OSSKey}}" bind:uploadUrlArr="onUploadUrl"></upload>
+            </view>
+            <view class='btn-wrapper'>
+              <button class='submit' hover-class='btn-hover' form-type='submit' disabled='{{disabled}}' loading='{{loading}}'>提交</button></view>
+          </form>
+      </view>
+    </form>
+
+    <!-- rules -->
+    <view class='rules'>
+      <view class='title'>意见反馈活动规则</view>
+      <view class='rules-wrapper'>
+        <view class='rules-list' wx:for="{{rules}}" wx:key="{{item.id}}">
+          <view class='item'>{{item.id}}、{{item.desc}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- list of winners -->
+    <view class='winner-wrapper'>
+      <view class='winner'>
+        <view class='title'>中奖名单</view>
+        <view class='winner-list'>
+          <view class='item' wx:for="{{winners}}" wx:key="{{item.id}}">
+            <view class='item-phone'>{{item.mobile}}</view>
+            <view class='item-name'>{{item.nick}}</view>
+            <view class='item-time'>{{item.date}}</view>
+            <view class='item-id'>{{item.id}}期</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

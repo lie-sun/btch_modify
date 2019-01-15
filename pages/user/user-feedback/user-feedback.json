@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "意见提交",
+  "usingComponents": {
+    "upload": "/components/upload/upload"
+  }
+}

@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+            <view class="weui-uploader">
+                <view class="weui-uploader__bd">
+                    <view class="weui-uploader__files" id="uploaderFiles">
+                        <block wx:for="{{files}}" wx:key="*this">
+                            <view class="weui-uploader_example weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                              <image catchtap='uploaderImageDel' data-index="{{index}}" class='weui-uploader__del' src='/images/hire/del.png'></image> 
+                              <image class="weui-uploader__img" src="{{item}}" mode="aspectFill"/>
+                              <!-- <view class='weui-uploader_example-text'>示例图</view> -->
+                              <!-- <progress percent="{{uploadGropress}}" hidden='{{uploadGropress==100}}'></progress> -->
+                            </view>
+                        </block>
+                        <view class="weui-uploader-box" bindtap="chooseImage">
+                           <image class="weui-uploader-img" src='/images/hire/add.png'></image>
+                           <!-- <image class='weui-bg-sky' src='/images/hire/sky.jpg'></image> -->
+                           <view class='add-img'>添加照片</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+/* pages/answer/error/error.wxss */
+@import '../order/order.wxss';

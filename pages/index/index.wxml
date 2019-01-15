@@ -1,0 +1,107 @@
+<view class="container">
+  <scroll-view scroll-y="true">
+    <swiper class='swiper-section' indicator-dots='{{indicatorDots}}' indicator-color='#bbb' indicator-active-color='#fff' autoplay='{{autoplay}}' circular='{{circular}}' style='height:{{height}}px'>
+      <block wx:for="{{imgUrls}}" wx:key="*this">
+        <swiper-item>
+          <image src='{{item}}' class='banner-img' bindload='setContainerHeight' binderror="errorMsg" data-errorimg="{{index}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class='icon-wrapper clearfix'>
+      <navigator class='icon' url="../rent/rent" open-type="switchTab" hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_1.png' mode="aspectFit"></image>
+          <text>我要租赁</text>
+        </view>
+      </navigator>
+
+      <navigator class='icon' url="../second-mall/second-mall" open-type="switchTab"  hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_3.png' mode="aspectFit"></image>
+          <text>二手仪器</text>
+        </view>
+      </navigator>
+
+      <navigator class='icon' url="../mall/main" hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_10.png' mode="aspectFit"></image>
+          <text>仪器商城</text>
+        </view>
+      </navigator>
+
+      <navigator class='icon' url="../user/service-site/service-site" hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_6.png' mode="aspectFit"></image>
+          <text>服务网点</text>
+        </view>
+      </navigator>
+
+      <navigator class='icon' url="../answer/answer" hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_5.png' mode="aspectFit"></image>
+          <text>三调一点通</text>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='icon-wrapper clearfix' style='padding-top: 0px;'>
+      <navigator class='icon' url="../hire/hire" hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_2.png' mode="aspectFit"></image>
+          <text>我要出租</text>
+        </view>
+      </navigator>
+
+      <navigator class='icon' url="../second-publish/second-publish" hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_4.png' mode="aspectFit"></image>
+          <text>二手发布</text>
+        </view>
+      </navigator>
+      <navigator class='icon' url="../quick-guide/quick-guide" hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_7.png' mode="aspectFit"></image>
+          <text>快捷指南</text>
+        </view>
+      </navigator>
+
+      <navigator class='icon' url="../user/user-feedback/user-feedback" hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_9.png' mode="aspectFit"></image>
+          <text>意见反馈</text>
+        </view>
+      </navigator>
+
+      <view class='icon icon-btn'>
+        <button open-type="share">
+          <view class='icon-item'>
+            <image src='/images/index/icon_8.png' mode="aspectFit"></image>
+            <text>转发分享</text>
+          </view>
+        </button>
+      </view>
+    </view>
+
+    <!-- <view class='icon-wrapper clearfix' style='padding-top: 0px;'>
+      <navigator class='icon' url="../mall/main" hover-class='none'>
+        <view class='icon-item'>
+          <image src='/images/index/icon_7.png' mode="aspectFit"></image>
+          <text>仪器商城</text>
+        </view>
+      </navigator>
+    </view> -->
+
+    <view class='show-item'>
+      <view class='image-wrapper'>
+        <image wx:if='{{subImgs.length!=0}}' bindtap='dailPhoneNumber' class='tel' src='/images/index/tel.png'></image>
+        <view hidden='{{goTopIcon}}'>
+          <image bindtap='goTop' src='/images/index/goTop.png'></image>
+        </view>
+      </view>
+      <block wx:for="{{subImgs}}" wx:key="*this">
+        <image class='pic' src='{{item}}' mode="widthFix"></image>
+      </block>
+    </view>
+  </scroll-view>
+</view>

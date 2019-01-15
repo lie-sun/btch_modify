@@ -1,0 +1,67 @@
+<view class='container'>
+  <scroll-view>
+    <!-- header picker -->
+    <view class='section-picker'>
+      <view class='picker-wrapper'>
+        <picker mode="multiSelector" bindcolumnchange="multiPickerColumnChange"  bindchange='pickerChange' data-id="1" value='{{multiIndex}}' range='{{multiArray}}'>
+          <text class='location {{isCityPicker?"":"hide"}}'>{{city?city:(authFlag?"未知":"定位中...")}}</text>
+          <text class='picker {{isCityPicker?"hide":""}}'>{{multiArray[1][multiIndex[1]]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+
+      <view class='picker-wrapper'>
+        <picker bindchange='pickerChange' data-id="2" disabled="{{factoryDisabled}}" value='{{factoryIndex}}' range='{{factory}}'>
+          <text class='{{isFactoryPicker?"":"hide"}}'>厂家</text>
+          <text class='picker {{isFactoryPicker?"hide":""}}'>{{factory[factoryIndex]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+
+      <view class='picker-wrapper'>
+        <picker bindchange='pickerChange' data-id="3" disabled="{{modelDisabled}}" value='{{modelIndex}}' range='{{model}}'>
+          <text class='{{isModelPicker?"":"hide"}}'>型号</text>
+          <text class='picker {{isModelPicker?"hide":""}}'>{{model[modelIndex]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+    </view>
+
+    <!-- select item -->
+    <view class='section-select' bindtap='selectItemTap'>
+      <view class='select-item {{tapActive==index?"active":""}}' wx:for="{{machine}}" wx:key="{{index}}" data-id="{{index}}">{{item}}</view>
+    </view>
+
+    <!-- product list -->
+    <view class='section-product'>
+      <!-- product -->
+      <second product="{{productInfo}}"></second>
+
+      <!-- loading more -->
+      <view wx:if='{{productInfo.length != 0 && loadMore}}'>
+        <view class='load-more' bindtap='loadMoreProduct'>点击加载更多...</view>
+      </view>
+
+      <!-- no search result -->
+      <noresult len="{{productInfo.length}}" flag="{{showFlag}}" noTip="暂无相关二手仪器"></noresult>
+
+      <view class='reco-wrapper' wx:if="{{productReco.length!=0 && productInfo.length==0}}">
+        <view class='reco-title'>
+          <view class='line left-line'></view>
+          <view class='title'>
+            <image src='/images/rent/product_reco.png'></image>
+            <text>仪器推荐</text>
+          </view>
+          <view class='line right-line'></view>
+        </view>
+      </view> 
+      
+      <!-- product recommend -->
+      <second product="{{productReco}}" wx:if="{{productReco.length!=0 && productInfo.length==0}}"></second>
+      <!-- loading more -->
+      <view wx:if='{{productInfo.length == 0 && productReco.length != 0 && loadMoreReco}}'>
+        <view class='load-more' bindtap='loadMoreReco'>点击加载更多...</view>
+      </view> 
+    </view>
+  </scroll-view>
+</view>

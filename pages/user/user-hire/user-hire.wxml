@@ -1,0 +1,53 @@
+<!--pages/user/user-hire/user-hire.wxml-->
+<view class='container'>
+  <scroll-view>
+    <view class='content'>
+      <!-- product list -->
+      <view hidden='{{myRent.length==0}}' class='product-wrapper'>
+        <view class='product-list' wx:for="{{myHire}}" wx:key="*this" wx:for-index="key">
+          <view class='product-right' bindtap='hireProductInfo' data-goodsid="{{item.productID}}">
+            <!-- left image -->
+            <image class='product-pic' src='{{item.img_url[0]}}'></image>
+            <!-- center product desc -->
+            <view class='product-desc'>
+              <view class='product-name'>
+                <text class='name'>{{item.type}}-{{item.factory}}{{item.model}}</text>
+              </view>
+              <view class='product-type'>
+                <text>{{item.city}}</text>
+                <text>{{item.type}}</text>
+                <text>{{item.number}}台</text>
+              </view>
+            </view>
+            <!-- edit -->
+            <view class='edit'>
+              <image class='icon-edit' src='/images/icon/icon-edit.png'></image>
+            </view>
+          </view>
+          
+          <!-- right rent status -->
+          <view class='status-wrapper'>
+            <view class="weui-cell__ft">
+              <switch checked='{{item.status==24 ? true : false}}' disabled="{{item.status==8?true:false}}" data-index="{{key}}" data-id="{{item.productID}}" bindchange="switchChange" color="#0075aa"/>
+            </view>
+            <view class='status {{item.status==24?"active":""}}'>{{item.status==24?"已上架":(item.status==-1?"已下架":(item.status==8?"待审核":""))}}</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- no product tip -->
+      <view wx:if='{{myHire && myHire.length==0 && flag}}'>
+        <view class='no-result'>
+          <image src='/images/rent/search-result.png'></image>
+          <view class='desc'>没有相关的出租信息</view>
+        </view>
+      </view>
+
+      <!-- navigator -->
+      <view class='btn' bindtap='goToHire'>
+        <button class='btn-up' hover-class='btn-hover'>我要出租</button>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

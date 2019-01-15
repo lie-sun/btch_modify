@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="tab-content">
+      <view class="pic">
+          <image src="{{topicPic}}" mode='widthFix'></image>
+      </view>
+      <!-- mode -->
+      <view class='header'>
+        <view class='select'>
+          <text class='page'>({{$index+1}}/{{topicCount}})</text>
+        </view>
+      </view>
+      <view class="subject-item">
+          <view class="item" wx:for="{{subject}}" wx:key="{{index}}" hidden='{{index!=$index}}'>
+              <view class="title">{{index+1}}、{{item.title}}</view>
+              <radio-group class="radio-group" bindchange="radioChange" data-index="{{index}}">
+                  <view class='radio-wrapper' wx:for="{{item.topic}}" wx:key="{{index}}" wx:for-item="tp">
+                    <label class='radio'>
+                      <radio value="{{tp.value}}" disabled='{{(selectTopicArray[$index] || backAnswer)?true:false}}'/>
+                      <text class='topic'>{{tp.value}} : {{tp.desc}}</text>
+                    </label>
+                  </view>
+              </radio-group>
+              <view class="btn-wrapper">
+                  <view class="btn btn-prev" bindtap='goPrevTopic'>{{index==0?"返回":prev}}</view>
+                  <view class="btn btn-next" bindtap='goNextTopic'>{{txt}}</view>
+              </view>
+              <view class='check-error' bindtap='checkErrorTopic' wx:if="{{isLastTopic}}">查看错题</view>
+          </view>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,53 @@
+<!--pages/user/service-site/auth-company/auth-company.wxml-->
+<view class='container'>
+  <view class='auth-content'>
+    <view class='auth auth-company'>
+      <view class='service-title'>公司名称</view>
+      <view class='content'>{{company}}</view>
+      <image class='auth-pic' src='../../../../images/icon/auth-yellow.png'></image>
+    </view>
+
+    <view class='auth auth-addr'>
+        <view class='address'>
+          <view class='service-title'>公司地址</view>
+          <view class='content'>{{addr}}</view>
+        </view>
+        <view class='content' bindtap='selectLocation'>点击添加 ></view>
+    </view>
+
+    <view class='auth auth-proxy'>
+      <view class='service-title'>代理厂家</view>
+      <view class='proxy-item'>
+        <view class='content' wx:for="{{proxy}}" wx:key="*this">{{item}}</view>
+      </view>
+      <image class='auth-pic' src='../../../../images/icon/auth-green.png'></image>
+    </view>
+
+    <view class='auth auth-phone'>
+      <view class='phone-wrapper'>
+        <view class='service-title'>电话号码</view>
+        <view class='content'>{{phone}}</view>
+      </view>
+      <image class='auth-pic' src='../../../../images/icon/auth-red.png'></image>
+    </view>
+
+    <view class='auth'>
+        <view class='service-title'>营业执照上传</view>
+        <view class='auth-box' bindtap='uploadAuthImage' wx:if="{{!uploadFlag}}">
+          <image src='../../../../images/icon/icon-photo.png'></image>
+          <view>上传营业执照照片</view>
+        </view>
+        <view wx:if="{{uploadFlag}}" class='pic-box' bindtap='previewAuthImage'>
+          <image catchtap='delUploadPic' class='del_pic' src='../../../../images/hire/del.png'></image>
+          <image src='{{authCertUrl}}'></image>
+        </view>
+      </view>
+  </view>
+
+  <view class='confirm-btn'>
+    <button class='confirm' hover-class='btn-hover-confirm' bindtap='submitCompany'>确认提交</button>
+  </view>
+</view>
+
+
+

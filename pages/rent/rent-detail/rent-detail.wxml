@@ -1,0 +1,138 @@
+<!--pages/rent/rent-detail/rent-detail.wxml-->
+<view class='container'>
+  <scroll-view scroll-y>
+    <swiper class='swiper-section' indicator-dots="{{indicatorDots}}" indicator-color='#bbb' indicator-active-color='#fff' style='height:480rpx;'>
+      <block wx:for="{{goodsInfo.img_url}}" wx:key="*this">
+        <swiper-item>
+          <image src='{{item}}' binderror='imageLoadError'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- goods info -->
+    <view class='goods-info'>
+      <view class='goods-name'>{{goodsInfo.factory}}{{goodsInfo.model}}</view>
+      <view class='goods-rent_count'>
+        <text class='goods-rent'><text class='goods-day_rent'><text class='mark'>￥</text>{{goodsInfo.rent_day}}/台</text>(日租金)</text>
+        <text class='goods-count'>数量：{{goodsInfo.number}}台</text>
+      </view>
+      <view class='goods-deposit_addr'>
+        <text class='goods-deposit'>押金{{goodsInfo.deposit}}元</text>
+        <text class='goods-addr'>{{goodsInfo.city}}</text>
+      </view>
+    </view>
+    <!-- other goods info tab -->
+    <view class="page">
+        <view class="page__bd">
+            <view class="weui-tab">
+                <view class="weui-navbar">
+                    <block wx:for="{{tabs}}" wx:key="*this">
+                        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                            <view class="weui-navbar__title">{{item}}</view>
+                        </view>
+                    </block>
+                    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+                </view>
+                <view class="weui-tab__panel">
+                    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                      <view class='item'><text>产品类型：</text>{{goodsInfo.type}}</view>
+                      <view class='item'><text>生产厂家：</text>{{goodsInfo.factory}}</view>
+                      <view class='item'><text>产品型号：</text>{{goodsInfo.model}}</view>
+                      <view class='item'><text>所在城市：</text>{{goodsInfo.city}}</view>
+                      <view class='item'><text>取货方式：</text>{{goodsInfo.pick_up_type}}</view>
+                      <view class='item' wx:if='{{phoneStr.length>5}}'><text>取货地址：</text>{{goodsInfo.pick_up_address}}</view>
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                      <view class='item'>
+                        <image src='{{goodsInfo.prop}}' mode='widthFix' style='width:100%;display:block;'></image>
+                      </view>
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                      <view class='item'>
+                        <image src='{{goodsInfo.attr}}' mode='widthFix' style='width:100%;display:block;'></image>
+                      </view>
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                      <view class='desc'>为方便各位测绘同仁，“巴图测绘”面向全国，收集仪器出租信息，是您仪器出租信息发布，租赁信息获取和寻找的最佳选择。
+                      </view>
+                      <view class='desc'>本平台发布的信息均为仪器设备持有者发布，平台只负责展示，并做了部分优化工作，但并不代表任何承诺。</view>
+                      <view class='desc'>具体的仪器详情及交易，仍需租赁双方进行再次沟通确认，由于双方沟通不当而产生的一切纠纷均与平台无关。</view>
+                    </view>
+                </view>
+                <!-- contact button -->
+                <!-- <view class='contact-btn'>
+                  <button class='contact' bindtap="viewContactInfo" hover-class='btn-hover' loading='{{loading}}' disabled='{{disabled}}'>{{phoneStr.length>5?"立即联系商家":"查看联系方式（需要消耗1BT)"}}</button>
+                </view> -->
+                <view class='rent-wrap'>
+                  <view class='rent-price'>￥220元/天</view>
+                  <view class='rent-pick' bindtap='bindRent'>一键租赁</view>
+                </view>
+            </view>
+        </view>
+    </view>
+  </scroll-view>
+
+  <view class='rent-content' wx:if="{{rentBoxWrap}}">
+    <view class='rent-detail'>
+      <view class='rent-head'>
+        <image class="pic" src='{{goodsInfo.img_url[0]}}'></image>
+        <view class='info'>
+          <view class='info-name'>{{goodsInfo.factory}}{{goodsInfo.model}}</view>
+          <view class='info-rent'><text>￥{{goodsInfo.rent_day}}/台</text>（日租金）</view>
+          <view class='info-deposit'>押金{{goodsInfo.deposit}}元</view>
+          <view class='info-count'>库存数量：{{goodsInfo.number}}台</view>
+        </view>
+      </view>
+
+      <view class='rent-info-wrap'>
+        <view class='rent-item'>
+          <view class="label">租赁数量</view>
+          <view class='change-count'>
+            <view class='change' bindtap='bindRentCountReduce'>-</view>
+            <view class='count'>{{rentCount}}</view>
+            <view class='change' bindtap='bindRentCountAdd'>+</view>
+          </view>
+        </view>
+
+        <view class='rent-item-days'>
+          <view class='label'>租赁天数</view>
+          <view class='date-wrap'>
+            <view class='start-date'>
+              <view class='name'>起租日期</view>
+              <view class='date'>2018年12月15日</view>
+            </view>
+
+            <view class='days'>15天</view>
+
+            <view class='end-date'>
+              <view class='name'>归还日期</view>
+              <view class='date'>2018年12月18日</view>
+            </view>
+          </view>
+        </view>
+
+        <view class='rent-item'>
+          <view class='label'>取货方式</view>
+          <radio-group class="radio-group" bindchange="checkboxChange">
+              <label class="weui-cell" wx:for="{{checkboxItems}}" wx:key="value">
+                  <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+                  <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                      <icon class="weui-icon-checkbox_circle" color='#5677fc' type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+                      <icon class="weui-icon-checkbox_success" color='#5677fc' type="success" size="23" wx:if="{{item.checked}}"></icon>
+                  </view>
+                  <view class="weui-cell__bd">{{item.name}}</view>
+              </label>
+          </radio-group>
+        </view>
+
+        <view class='rent-item'>
+          <view class='label'>送货地址</view>
+          <view>山西省太原市小店区南中环北张小区 ></view>
+        </view>
+      </view>
+
+      <view bindtap='bindRentConfirm' class='rent-confirm'>确定</view>
+    </view>
+  </view>
+
+  <view class='mask' wx:if="{{rentBoxWrap}}" bindtap='bindMaskClick'></view>
+</view>

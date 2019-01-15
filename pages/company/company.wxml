@@ -1,0 +1,60 @@
+<!--pages/company/company.wxml-->
+<view class='container'>
+  <form bindsubmit='formSubmit'>
+    <!-- weui-cell -->
+    <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                  <view class="weui-label">单位名称</view>
+              </view>
+              <view class="weui-cell__ft">
+                  <input class="weui-input" name="companyName" placeholder="请填写单位名称" placeholder-class='placeholder'/>
+              </view>
+          </view>
+
+          <view class="weui-cell">
+              <view class="weui-cell__bd">人员规模</view>
+              <view class="weui-cell__ft picker-wrapper">
+                <picker bindchange='pickerChange' name="personRange" data-id="1" value='{{personIndex}}' range='{{personRange}}'>
+                  <text class='tip {{isPersonPicker?"":"hide"}}'>请选择</text>
+                  <text class='picker {{isPersonPicker?"hide":""}}'>{{personRange[personIndex]}}</text>
+                </picker>
+              </view>
+              <view class='weui-cell_ft weui-cell__ft_in-access'></view>
+          </view>
+
+          <view class="weui-cell">
+              <view class="weui-cell__bd">行业</view>
+              <view class="weui-cell__ft picker-wrapper">
+                <picker bindchange='pickerChange' name="trade" data-id="2" value='{{tradeIndex}}' range='{{trade}}'>
+                  <text class='tip {{isTradePicker?"":"hide"}}'>请选择</text>
+                  <text class='picker {{isTradePicker?"hide":""}}'>{{trade[tradeIndex]}}</text>
+                </picker>
+              </view>
+              <view class='weui-cell_ft weui-cell__ft_in-access'></view>
+          </view>
+
+          <view class="weui-cell">
+              <view class="weui-cell__bd">我的职务</view>
+              <view class="weui-cell__ft picker-wrapper">
+                <picker bindchange='pickerChange' name="position" data-id="3" value='{{positionIndex}}' range='{{position}}'>
+                  <text class='tip {{isPositionPicker?"":"hide"}}'>请选择</text>
+                  <text class='picker {{isPositionPicker?"hide":""}}'>{{position[positionIndex]}}</text>
+                </picker>
+              </view>
+              <view class='weui-cell_ft weui-cell__ft_in-access'></view>
+          </view>
+    </view>
+
+    <!-- submit button -->
+    <view class='submit-btn'>
+      <button class='btn submit' hover-class='btn-hover-confirm' formType='submit' loading="{{loading}}" disabled='{{disabled}}'>确认提交</button>
+      <button open-type="share" class='btn invite' hover-class='btn-hover-invite'>邀请同事</button>
+    </view>
+  </form>
+  <!-- tip -->
+  <!-- <view class='company-tip'>
+    <text>企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明企业认证说明</text>
+  </view> -->
+</view>
+

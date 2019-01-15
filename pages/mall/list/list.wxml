@@ -1,0 +1,21 @@
+<view class='product-wrapper'>
+  <view class='product-item'>
+    <view class='item-content'>
+      <view class='item-block' wx:for="{{product}}" wx:key="{{index}}" bindtap='bindProductDetail' data-id="{{item.productID}}">
+        <image class='item-pic' src='{{item.img[0]}}'></image>
+        <view class='item-wrapper'>
+          <view class='item-desc'>
+            <text>{{item.factory}}</text>
+            <text class='type'>{{item.model}}</text>
+          </view>
+          <view class='item-detail'>￥详情点击</view>
+          <!-- <view class='item-list'>
+            <view class='list'>{{item.}}</view>
+            <view class='list'>V60</view>
+            <view class='list'>{{item.}}台</view>
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

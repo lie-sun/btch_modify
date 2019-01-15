@@ -1,0 +1,93 @@
+<view class="container">
+    <!-- 仪器描述 -->
+    <view class="yiqi">
+        <image class="img" src="{{img}}"></image>
+        <view class="info">
+            <view class="name">
+                {{factory}}{{model}}
+                <text class="cp">{{type}}</text>
+            </view>
+            <view class="price">
+                ￥{{rent_day}}元/台
+                <text id="time">(日租金)</text>
+            </view>
+            <view class="yajin">押金{{deposit}}元</view>
+            <view class="kucun">库存数量：{{number}}台</view>
+        </view>
+    </view>
+    <!-- 型号 -->
+    <view class="types">
+        <view class=" li leixing">
+            <text class="shu"></text>
+            仪器类型
+            <text class="rrs">{{type}}</text>
+        </view>
+        <view class="li changjia">
+            <text class="shu"></text>
+            仪器厂家
+            <text class="rrs">{{factory}}</text>
+        </view>
+        <view class="li xinghao">
+            <text class="shu"></text>
+            仪器型号
+            <text class="rrs">{{model}}</text>
+        </view>
+        <view class="li number">
+            <text class="shu"></text>
+            租凭数量
+            <view class="numbers">
+                <text class="jj jian" bind:tap="jian">-</text>
+                <text id="number">{{usenumber}}</text>
+                <text class="jj jia" bind:tap="jia">+</text>
+            </view>
+        </view>
+        <view class="li timelong">
+            <text class="shu"></text>
+            租凭天数
+            <view class='date-wrap'>
+                <view class='start-date'>
+                    <view class='names'>起租日期</view>
+                    <view class='date'>
+                        <picker mode="date" value="{{startTime}}" start="{{startTime}}" end="2080-01-01" bindchange="bindDateChange">
+                            <view class="picker">{{startTime}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class='days'>{{timeLong}}天</view>
+                <view class='end-date'>
+                    <view class='names'>归还日期</view>
+                    <view class='date'>
+                        <picker mode="date" value="{{endTime}}" start="{{startTime1}}" end="2080-01-01" bindchange="bindDateChange1">
+                            <view class="picker">{{endTime}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="li method">
+            <text class="shu"></text>
+            取货方式
+            <view class="yhfs">
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <radio value="0" checked="{{selectedItem==0}}" />
+                    送货
+                    <radio value="1" checked="{{selectedItem==1}}" />
+                    自取
+                </radio-group>
+            </view>
+        </view>
+        <view class="li address">
+            <text class="shu"></text>
+            {{method}}地址
+            <view wx:if="{{selectedItem==0}}" class="addresss">
+                <input type="text" value="{{harvestAddress}}" placeholder="请输入收获地址" />
+            </view>
+            <view wx:if="{{selectedItem==1}}" class="addresss">{{pickAddress}}</view>
+        </view>
+    </view>
+    <view class="bm"></view>
+    <view class="bottom">
+        总金额：￥{{totalmoney}}元
+        <view class="xdbtn" bind:tap="order">确定下单</view>
+    </view>
+</view>

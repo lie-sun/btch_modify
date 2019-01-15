@@ -1,0 +1,39 @@
+/* pages/cert/cert.wxss */
+.pic {
+  padding: 40rpx 0;
+  margin-bottom: 40rpx;
+}
+
+.pic image {
+  width: 240rpx;
+  height: 240rpx;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+}
+
+.pic .tip {
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.btn-wrap {
+  margin: 0 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.btn-wrap .btn {
+  padding: 20rpx 0;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.btn-wrap .btn.btn-cert {
+  margin-bottom: 20rpx;
+  background-color: #4280de;
+}
+
+.btn-wrap .btn.btn-back {
+  background-color: #9499a0;
+}

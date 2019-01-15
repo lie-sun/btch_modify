@@ -1,0 +1,62 @@
+<view class="container">
+    <view class="banner">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image" width="355" height="150" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="infos">
+        <view class="name">
+            <text id="name">{{factory}}{{model}}</text>
+        </view>
+        <view class="zujin">
+            ￥{{rent_day}}元/台
+            <text class="ryj">(日租金)</text>
+            <text class="number rr">数量：{{number}}台</text>
+        </view>
+        <view class="yajin">
+            押金{{deposit}}元
+            <text class="add rr">{{city}}</text>
+        </view>
+    </view>
+    <view class="hr"></view>
+    <view class="tabs">
+        <view bind:tap="tabclick" class="tab {{activeIndex==1?'actived':''}}" data-index="1">
+            出租信息
+        </view>
+        <view bind:tap="tabclick" class="tab {{activeIndex==2?'actived':''}}" data-index="2">产品参数</view>
+        <view bind:tap="tabclick" class="tab {{activeIndex==3?'actived':''}}" data-index="3">配置清单</view>
+        <view bind:tap="tabclick" class="tab {{activeIndex==4?'actived':''}}" data-index="4">租凭须知</view>
+    </view>
+    <view class="" wx:if="{{activeIndex==1}}">
+        <view class="li">产品类型：{{type}}</view>
+        <view class="li">生产厂家：{{factory}}</view>
+        <view class="li">产品型号：{{model}}</view>
+        <view class="li">所在城市：{{city}}</view>
+        <view class="li">取货方式：自取或送货</view>
+    </view>
+    <view class="canshu" wx:if="{{activeIndex==2}}" >
+        <image class="prop" src="{{prop}}" mode="widthFix"></image>
+    </view>
+    <view class="canshu" wx:if="{{activeIndex==3}}" >
+        <image class="prop" src="{{attr}}" mode="widthFix"></image>
+    </view>
+    <view class="xuzhi" wx:if="{{activeIndex==4}}" >
+        <view >为方便各位测绘同仁，“巴图测绘”面向全国，收集仪器出租信息，是您仪器出租信息发布，租凭信息获取和寻找的最佳选择。</view>
+        <view >本平台发布的信息均为仪器设备的所有者发布，平台只负责展示，并做好了部分优化工作，并不代表任何承诺。</view>
+        <view >具体仪器详情及交易，仍需租凭双方进行再次沟通确认，由于双方沟通不当而产生的一切纠纷均与平台无关。</view>
+    </view>
+
+    <view class="btm"></view>
+    <view class="bottom">
+        <text class="rizujin">￥{{rent_day}}元/天</text>
+        <view class="goumai">
+            <navigator url="/pages/order/order" hover-class="navigator-hover" open-type="navigate">
+                一键租凭
+            </navigator>
+        </view>
+    </view>
+</view>

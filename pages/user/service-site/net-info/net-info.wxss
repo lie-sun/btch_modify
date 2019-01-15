@@ -1,0 +1,61 @@
+/* pages/user/service-site/net-info/net-info.wxss */
+@import '../add/add.wxss';
+.service-item .pic{
+  width:217px;
+  height:137px;
+  display: block;
+  margin: 0 auto;
+}
+
+.service-item .address .content{
+  width: 480rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.service-item .image-box image{
+  width: 435rpx;
+  margin: 0 auto 30rpx auto;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-item .proxy-wrapper .proxy-product{
+  width: 480rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.button-wrapper{
+  background-color: #f2f2f2;
+}
+
+.button-wrapper .share-btn{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper .share-btn .share-pic{
+  width: 20px;
+  height: 20px;
+}
+
+.button-wrapper .share-btn .share{
+  margin-left: 12px;
+}
+
+.button-wrapper .share-btn{
+  background-color: #ff1616;
+}
+
+.button-wrapper .share-btn.btn-hover-share{
+  color:rgba(255,255,255,0.6);
+  background-color:#da0606;
+}

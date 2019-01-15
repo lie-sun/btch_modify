@@ -1,0 +1,75 @@
+/* pages/userinfo/userinfo.wxss */
+.content{
+  padding: 0 20px;
+}
+.content .bt-info{
+  padding-top: 120rpx;
+  padding-bottom: 100rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.content .bt-info::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  border: 1px solid #ededed;
+  box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+  transform: scale(1, 0.5);
+  transform-origin: 0 0;
+}
+
+.content .bt-info image{
+  width: 140rpx;
+  height: 140rpx;
+  margin-bottom: 40rpx;
+  border-radius: 50%;
+}
+
+.bt-info .bt-name{
+  margin-bottom: 12rpx;
+  color: #343434;
+  font-size: 18px;
+}
+.bt-info .bt-desc{
+  color: #969696;
+  font-size: 15px;
+}
+.content .user-desc{
+  margin-bottom: 80rpx;
+  color: #969696;
+  font-size: 15px;
+  line-height: 35px;
+}
+
+.btn-wrapper {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.btn-wrapper .btn{
+  width: 300rpx;
+  height: 84rpx;
+  margin: 0px;
+  line-height: 84rpx;
+  text-align: center;
+}
+.btn-wrapper .btn-home{
+  color: #343434;
+  font-size: 14px;
+  background-color: #ddd;
+}
+.btn-wrapper .btn-auth{
+  color: #fff;
+  font-size: 14px;
+  background-color: #ff552d;
+}

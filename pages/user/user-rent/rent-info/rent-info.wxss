@@ -1,0 +1,22 @@
+@import "../../../rent/rent-detail/rent-detail.wxss";
+
+.goods-info .goods-deposit_addr,
+.goods-info .contact{
+  color: #888;
+  font-size: 14px;
+}
+.goods-info .goods-deposit_addr{
+  margin-bottom: 10px;
+}
+.contact-btn button{
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  font-size: 16px;
+  border-radius:5px;
+  background-color: #15619d;
+}
+.contact-btn button.btn-hover{
+  color: rgba(255,255,255,0.6);
+  background-color: #15619d;
+}

@@ -1,0 +1,114 @@
+/* pages/mall/main.wxss */
+page {
+  background-color: #f8f8f8;
+}
+
+.header {
+  height: 120rpx;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.header .block {
+  width: 50%;
+  flex: 0 0 50%;
+}
+
+.header .block text {
+  margin-left: 8rpx;
+  font-size: 28rpx;
+}
+
+.header .icon {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+
+.header .header-classify {
+  position: relative;
+}
+
+.header .header-classify::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -20rpx;
+  width: 1px;
+  height: 40rpx;
+  background-color: #ddd;
+}
+
+.product-wrapper .product-item .item-title {
+  padding: 14rpx 20rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  background-color: #c9c9c9;
+  color: #222;
+}
+
+.product-wrapper .item-content {
+  overflow: hidden;
+}
+
+.product-wrapper .item-content .item-block {
+  width: 49.5%;
+  float: left;
+  /* margin-bottom: 8rpx; */
+  background-color: #fff;
+}
+
+.product-wrapper .item-content .item-block:nth-child(even) {
+  margin-left: 1%;
+}
+
+.product-wrapper .item-content .item-block .item-pic{
+  width: 100%;
+  height: 350rpx;
+  display: block;
+}
+
+.product-wrapper .item-content .item-block .item-wrapper {
+  padding: 12rpx 30rpx 18rpx;
+  font-size: 28rpx;
+}
+
+.product-wrapper .item-content .item-block .item-wrapper .item-desc {
+  margin-bottom: 16rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.product-wrapper .item-content .item-block .item-wrapper .item-desc .type {
+  margin-left: 8rpx;
+}
+
+.product-wrapper .item-content .item-block .item-wrapper .item-detail {
+  color: #f25b65;
+  font-weight: bold;
+}
+
+.product-wrapper .item-content .item-block .item-wrapper .item-list {
+  font-size: 24rpx;
+  color: #dbdbdb;
+  overflow: hidden;
+}
+
+.product-wrapper .item-content .item-block .item-wrapper .item-list .list {
+  margin-left: 16rpx;
+  border-radius: 10px;
+  padding: 0 14rpx;
+  float: left;
+  border: 1px solid #dbdbdb;
+}
+
+.product-wrapper .item-content .item-block .item-wrapper .item-list .list:first-child {
+  margin-left: 0px;
+}

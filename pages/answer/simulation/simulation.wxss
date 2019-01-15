@@ -1,0 +1,30 @@
+/* pages/select/select.wxss */
+.select-btn{
+    margin-top: 25px;
+    margin-bottom: 50px;
+    padding: 0 25px;
+}
+.select-btn .btn{
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #fff;
+    text-align: center;
+    font-size: 32rpx;
+    border-radius: 6px;
+    background-color: #6666cc;
+}
+.select-list .list{
+    padding: 10px 0;
+    margin-bottom: 2px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 28rpx;
+    background-color: #9b9bda;
+}
+.select-list .title{
+    margin-left: 25px;
+}

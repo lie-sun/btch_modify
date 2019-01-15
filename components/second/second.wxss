@@ -1,0 +1,92 @@
+/* components/product/product.wxss */
+@import "/app.wxss";
+
+.product-wrapper{
+  width: 100%;
+  margin: 0 auto;
+}
+.product-wrapper .product-item{
+  width: 49.5%;
+  float: left;
+  margin-bottom: 1%;
+}
+.product-wrapper .product-item:nth-child(even){
+  margin-left: 1%;
+}
+.product-wrapper .product-item .product-pic{
+  width: 100%;
+  height: 350rpx;
+  display: block;
+}
+.product-wrapper .product-item .product-desc{
+  padding:15rpx 20rpx 20rpx 20rpx;
+
+  background-color: #fff;
+}
+.product-item .product-desc .pro .product-name{
+  width: 180rpx;
+  flex: 0 0 180rpx;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #353535;
+  font-size: 28rpx;
+}
+.product-item .product-desc .pro .deposit{
+  margin-left: 2px;
+  color: #888;
+  text-align: right;
+  font-size: 24rpx;
+}
+.product-item .product-desc .pro-title{
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.product-item .product-desc .product-rent{
+  margin-bottom:2px;
+  color: #ff585e;
+  font-size: 24rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.product-item .product-desc .pro-box-wrapper {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.product-desc .product-rent .product-money{
+  margin-right: 4px;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.product-desc .product-rent .product-money .mark{
+  margin-right: 2px;
+  font-size: 24rpx;
+}
+.product-item .product-desc .pro-box{
+  padding: 2rpx 10rpx;
+  margin-left: 8rpx;
+  color: #888;
+  font-size: 24rpx;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #888;
+  display: block;
+}
+.product-item .product-desc .pro-box.pro-model{
+  max-width:180rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.product-item .product-desc .pro-box:first-child{
+  margin-left: 0px;
+}

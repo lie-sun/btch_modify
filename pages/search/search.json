@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "搜索仪器",
+    "usingComponents": {
+        "product": "/components/product/product",
+        "noresult": "/components/noresult/noresult"
+    }
+}

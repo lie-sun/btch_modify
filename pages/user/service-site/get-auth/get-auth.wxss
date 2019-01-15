@@ -1,0 +1,92 @@
+/* pages/user/service-site/get-auth/get-auth.wxss */
+.tip{
+  padding: 8px 15px;
+  background-color: #e4e4e4;
+  font-size: 28rpx;
+}
+
+.auth-content{
+  padding:0 15px;
+}
+
+.auth-content .auth{
+  margin-bottom: 24rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#fff;
+  border-radius:8px;
+  box-shadow:2px 2px 4px rgba(0,0,0,0.4);
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+}
+
+.auth-content .auth:first-child{
+  margin-top: 24rpx;
+}
+
+.auth-content .auth .icon{
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.auth-content .auth .auth-wrapper{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.auth-content .auth .auth-wrapper .auth-desc{
+  margin-left: 22rpx;
+  line-height: 2;
+}
+
+.auth-content .auth .tips{
+  font-size: 24rpx;
+  color: #949494;
+}
+
+.auth-content .auth .auth-sign{
+  color: #949494;
+}
+
+.auth-content .auth.invite{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.auth-content .auth .invite-content{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;  
+}
+
+.auth-content .auth .invite-content.send{
+  margin-bottom: 40rpx;
+}
+
+.auth-content .auth .send-invite{
+  padding: 2px 10px;
+  color: #fff;
+  line-height: 1.6;
+  font-size: 28rpx;
+  border-radius: 12px;
+  background-color: #ff6139;
+}
+
+.auth-content .auth .invite-content .avatar-wrapper{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.auth-content .auth .invite-content .avatar-wrapper .avatar{
+  width: 40px;
+  height: 40px;
+  display: block;
+}

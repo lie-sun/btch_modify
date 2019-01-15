@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "仪器详情",
+  "usingComponents": {
+    "upload": "/components/upload/upload"
+  }
+}

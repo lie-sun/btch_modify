@@ -1,0 +1,2 @@
+/* pages/user/user-publish/user-publish.wxss */
+@import '../user.wxss';

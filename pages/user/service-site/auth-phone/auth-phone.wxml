@@ -1,0 +1,48 @@
+<!--pages/user/service-site/auth-phone/auth-phone.wxml-->
+<view class='container'>
+  <view class='auth-content'>
+    <view class='auth auth-company'>
+      <view class='service-title'>公司名称</view>
+      <view class='content'>{{company}}</view>
+      <image class='auth-pic' src='../../../../images/icon/auth-yellow.png'></image>
+    </view>
+
+    <view class='auth auth-addr'>
+        <view class='address'>
+          <view class='service-title'>公司地址</view>
+          <view class='content'>{{addr}}</view>
+        </view>
+        <view class='content' bindtap='selectLocation'>点击添加 ></view>
+    </view>
+
+    <view class='auth auth-proxy'>
+      <view class='service-title'>代理厂家</view>
+      <view class='proxy-item'>
+        <view class='content' wx:for="{{proxy}}" wx:key="*this">{{item}}</view>
+      </view>
+      <image class='auth-pic' src='../../../../images/icon/auth-green.png'></image>
+    </view>
+
+    <view class='auth auth-phone'>
+      <view class='phone-wrapper'>
+        <view class='service-title'>电话号码</view>
+        <input type='text' class='content' bindinput='getInputPhone' value='{{phone}}' placeholder='请填写电话号码'></input>
+      </view>
+      <view class='send-code' catchtap='sendCheckCode' hidden='{{!sendCodeBtn}}'>获取验证码</view>
+      <view class='send-code second' hidden='{{sendCodeBtn}}'>{{second}}秒后可重发</view>
+      <image class='auth-pic' src='../../../../images/icon/auth-red.png'></image>
+    </view>
+
+    <view class='auth auth-code'>
+      <view class='service-title'>填写验证码</view>
+      <view class='content'>
+        <input type='text' placeholder='此处填写验证码' value='{{code}}' bindinput='getInputCode'></input>
+      </view>
+    </view>
+  </view>
+
+  <view class='confirm-btn'>
+    <button class='confirm' hover-class='btn-hover-confirm' bindtap='submitPhoneAuth'>确认提交</button>
+  </view>
+</view>
+

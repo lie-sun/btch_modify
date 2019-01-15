@@ -1,0 +1,13 @@
+<!--pages/user/about/about.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='bt-pic'>
+      <image src='../../../images/hire/bt.jpg' mode='widthFix'></image>
+    </view>
+
+    <view class='bt-wrapper'>
+      <view class='bt-ques'>什么是巴图测绘？</view>
+      <view class='bt-desc'>巴图测绘是一款提供测绘仪器租赁、出租于一体的信息分享交流平台,以微信程序的形式,对用户提供仪器租赁信息的发布、仪器租赁信息的获取等服务。连接测绘行业的仪器拥有者和仪器需求者,巴图测绘致力于为用户提供仪器租赁信息的精准对接服务,是仪器租赁行业的先行者与开创者。 </view>
+    </view>
+  </view>
+</view>

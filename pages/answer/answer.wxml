@@ -1,0 +1,34 @@
+<view class="container">
+		<view class="title-pic">
+			<image src="{{answerPic}}" mode='widthFix'></image>
+		</view>
+		<view class="title-btn">
+      <view class='flex left'>
+        <view class="btn random-btn" bindtap='bindRandomTopic'>
+          <image src="../../images/answer/random.png"></image>
+          <view>随机练习</view>
+        </view>
+        <view class="btn special-btn" bindtap='bindSpecialTopic'>
+          <image src="../../images/answer/special.png"></image>
+          <view>专项练习</view>
+        </view>
+      </view>
+      <view class='flex center'>
+			  <view class="btn order-btn" bindtap='bindOrderTopic'>
+          <view class='order-wrapper'>
+            <view class='order-inner'>顺序练习</view>
+          </view>
+        </view>
+      </view>
+      <view class='flex right'>
+        <view class="btn error-btn" bindtap='bindErrorTopic'>
+          <image src="../../images/answer/error.png"></image>
+          <view>错题练习</view>
+        </view>
+        <view class="btn simulation-btn" bindtap='bindSimulationTopic'>
+          <image src="../../images/answer/simulation.png"></image>
+          <view>模拟考试</view>
+        </view>
+      </view>
+		</view>
+</view>

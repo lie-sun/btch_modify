@@ -1,0 +1,11 @@
+@import "weui.wxss";
+.hide{
+  display: none;
+}
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}

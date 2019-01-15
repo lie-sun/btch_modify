@@ -1,0 +1,99 @@
+<view class='container'>
+  <scroll-view scroll-y>
+    <swiper class='swiper-section' indicator-dots="true" indicator-color='#bbb' indicator-active-color='#fff' style='height:480rpx;'>
+      <block wx:for="{{product.img}}" wx:key="*this">
+        <swiper-item>
+          <image src='{{item}}' binderror='imageLoadError'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!-- goods info -->
+    <view class='goods-info'>
+      <view class='goods-center'>
+        <view class='goods-name'>{{product.factory}}{{product.model}}</view>
+        <view class='goods-desc'>价格：请咨询当地销售服务中心</view>
+      </view>
+
+      <view class='goods-net' bindtap='goServiceNet'>
+        <image src='../../../images/mall/icon-net.png'></image>
+        <text>服务网点</text>
+      </view>   
+    </view>
+
+    <view class='dealer-wrapper'>
+      <view hidden="{{product.services.length==0}}">
+        <view class='dealer-title'>
+          <view class='line'></view>
+          <view class='txt'>销售服务中心</view>
+          <view class='line'></view>
+        </view>
+        <view class='dealer-content'>
+          <view class='dealer-item' wx:for="{{product.services}}" wx:key="*this" wx:for-item="list">
+            <image class='dealer-pic' src='../../../images/mall/product.png'></image>
+            <view class='dealer-detail'>
+              <view class='title'>{{list.company}}</view>
+              <view class='address'>
+                <image class='addr-pic' src='../../../images/mall/icon-addr.png'></image>
+                <view class='addr-detail'>{{list.addr}}</view>
+                <view class='address-go' bindtap='goToAddress' data-index="{{index}}">点击前往>></view>
+              </view>
+              <!-- <view class='dealer-proxy'>代理产品：
+                <text class='dealer-name' wx:for="{{list.proxy}}" wx:key="{{index}}" wx:for-item="proxy">{{proxy.product}}{{proxy.brand}}</text>
+              </view> -->
+              <view class='concat'>
+                <text>联系人：</text>
+                <text class='name'>{{list.name}}</text>
+                <text class='tel'>{{list.phone}}</text>
+                <text class='dail' bindtap='bingDailTel' data-id="{{index}}">立即拨打</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- no search result -->
+      <noresult len="{{product.services.length}}" flag="{{showFlag}}" noResult="" noTip="暂无销售服务"></noresult>
+    </view>
+
+    <!-- other goods info tab -->
+    <view class="page">
+        <view class="page__bd">
+            <view class="weui-tab">
+                <view class="weui-navbar">
+                    <block wx:for="{{tabs}}" wx:key="*this">
+                        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                            <view class="weui-navbar__title">{{item}}</view>
+                        </view>
+                    </block>
+                    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+                </view>
+                <view class="weui-tab__panel">
+                    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                      <view class='item'><text>产品类型：</text>{{product.type}}</view>
+                      <view class='item'><text>生产厂家：</text>{{product.factory}}</view>
+                      <view class='item'><text>产品型号：</text>{{product.model}}</view>
+                      <!-- <view class='item'><text>所在城市：</text>{{product.type}}</view> -->
+                      <view class='item'><text>取货方式：</text>{{product.pick_up_type}}</view>
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                      <view class='item'>
+                        <image src='{{product.params_url}}' mode='widthFix' style='width:100%;display:block;'></image>
+                      </view>
+                    </view>
+                    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                      <view class='item'>
+                        <image src='{{product.config_url}}' mode='widthFix' style='width:100%;display:block;'></image>
+                      </view>
+                    </view>
+                    <!-- <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                      <view class='desc'>为方便各位测绘同仁，“巴图测绘”面向全国，收集仪器出租信息，是您仪器出租信息发布，租赁信息获取和寻找的最佳选择。
+                      </view>
+                      <view class='desc'>本平台发布的信息均为仪器设备持有者发布，平台只负责展示，并做了部分优化工作，但并不代表任何承诺。</view>
+                      <view class='desc'>具体的仪器详情及交易，仍需租赁双方进行再次沟通确认，由于双方沟通不当而产生的一切纠纷均与平台无关。</view>
+                    </view> -->
+                </view>
+            </view>
+        </view>
+    </view>
+  </scroll-view>
+</view>

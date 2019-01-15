@@ -1,0 +1,54 @@
+<!--pages/user/user-account/user-account.wxml-->
+<view class='container'>
+  <view class='content'>
+    <!-- 权限 -->
+    <view class='purview'>
+      <view class='purview-use'>可用BT</view>
+      <view class='purview-count'>{{userCanUse}}</view>
+      
+      <view class='picker-wrapper'>
+        <picker bindchange='pickerChange' name="payScore" value='{{payIndex}}' range='{{payList}}'>
+          <button class='recharge' hover-class='btn-hover'>立即充值</button>
+        </picker>
+      </view>
+    </view>
+
+    <!-- BT充值记录 -->
+    <view class='record'>
+      <!-- title -->
+      <view class='record-title'>
+        <view bindtap='bindTip' data-id="1" class='{{clickType==1?"active":""}}'>充值说明</view>
+        <view bindtap='bindRecord' data-id='2' class='{{clickType==2?"active":""}}'>充值消费记录</view>
+      </view>
+
+      <!-- record list -->
+      <view class='record-list-wrapper' hidden='{{clickType==1}}'>
+        <view class='record-list' wx:for="{{payConsumeRecord}}" wx:key="*this">
+          <image class='icon-tip' src='/images/icon/icon-{{item.type>0?"in":"out"}}.png'></image>
+          <view class='list'>
+            <view class='record-left'>
+              <view class='record-tip'>
+                <view class='record-type'>{{item.type>0?"BT充值":"购买支出"}}</view>
+                <view class='record-time'>{{item.date}}</view>
+              </view>
+            </view>
+            <!-- record time -->
+            <view class='record'>{{item.type>0?"+":"-"}}{{item.num}}BT</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- tip -->
+      <view class='tip' hidden='{{clickType==2}}'>
+        <view style='text-indent: 2em;'>平台内交易，使用平台货币巴图币（巴图首字母BT为单位），请您根据个人情况进行合理充值，充值后的金额只能在平台内使用，不提供退款服务。充值后的金额目前只能<text style='font-weight:bold;'>查看仪器出租方联系方式使用。</text>每查看一次仪器出租方联系方式收取1BT（巴图币）。</view>
+        <view class='tip-bt'>
+          <view>在试运行期间充值可获以下优惠（截止到2018年9月30日）</view>
+          <view>5元=1BT（巴图币）    合计5元=1BT</view>
+          <view>20元=5BT（巴图币）   合计4元=1BT</view>
+          <view>30元=10BT（巴图币）  合计3元=1BT</view>
+          <view>50元=25BT（巴图币）  合计2元=1BT</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

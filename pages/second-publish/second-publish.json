@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "二手仪器发布",
+  "usingComponents": {
+    "upload": "/components/upload/upload"
+  }
+}

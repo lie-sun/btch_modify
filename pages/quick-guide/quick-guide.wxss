@@ -1,0 +1,23 @@
+/* pages/quick-guide/quick-guide.wxss */
+swiper swiper-item image{
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-wrapper{
+  margin-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.btn-wrapper .btn{
+  width: 320rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 24px;
+  background-color: #3781d5;
+}

@@ -1,0 +1,113 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/details/details",
+    "pages/rent/rent",
+    "pages/order/order",
+    "pages/logs/logs",
+    "pages/hire/hire",
+    "pages/user/user",
+    "components/upload/upload",
+    "components/product/product",
+    "components/noresult/noresult",
+    "pages/rent/rent-detail/rent-detail",
+    "pages/certification/certification",
+    "pages/certification/phone-num/phone-num",
+    "pages/rent/points/points",
+    "pages/rent/fail/fail",
+    "pages/user/user-rent/user-rent",
+    "pages/user/user-account/user-account",
+    "pages/user/about/about",
+    "pages/auth/auth",
+    "pages/user/user-hire/user-hire",
+    "pages/company/company",
+    "pages/user/user-feedback/user-feedback",
+    "pages/user/user-rent/rent-info/rent-info",
+    "pages/user/user-hire/hire-info/hire-info",
+    "pages/authorized/authorized",
+    "components/notice/notice",
+    "pages/tip/tip",
+    "pages/userinfo/userinfo",
+    "pages/answer/answer",
+    "pages/answer/order/order",
+    "pages/answer/random/random",
+    "pages/answer/special/special",
+    "pages/answer/special/section/section",
+    "pages/answer/error/error",
+    "pages/answer/simulation/simulation",
+    "pages/answer/simulation/section/section",
+    "pages/answer/simulation/error-topic/error-topic",
+    "pages/user/service-site/service-site",
+    "pages/user/service-site/add/add",
+    "pages/user/service-site/get-auth/get-auth",
+    "pages/user/service-site/auth-phone/auth-phone",
+    "pages/user/service-site/auth-proxy/auth-proxy",
+    "pages/user/service-site/auth-company/auth-company",
+    "pages/user/service-site/net-info/net-info",
+    "pages/user/service-site/points/points",
+    "pages/user/user-publish/user-publish",
+    "pages/user/user-order/user-order",
+    "pages/second-mall/second-mall",
+    "pages/second-publish/second-publish",
+    "pages/user/user-publish/second-publish/second-publish",
+    "pages/user/user-publish/publish-info/publish-info",
+    "pages/user/user-order/second-publish/second-publish",
+    "pages/user/user-order/publish-info/publish-info",
+    "components/second/second",
+    "pages/second-mall/second-detail/second-detail",
+    "pages/second-mall/fail/fail",
+    "pages/second-mall/points/points",
+    "pages/quick-guide/quick-guide",
+    "pages/mall/main",
+    "pages/mall/sort/sort",
+    "pages/mall/list/list",
+    "pages/mall/detail/detail",
+    "pages/protocol/protocol",
+    "pages/cert/cert"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#15619D",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a0a0a0",
+    "selectedColor": "#3871a8",
+    "position": "bottom",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabBar/index.png",
+        "selectedIconPath": "images/tabBar/index_selected.png"
+      },
+      {
+        "pagePath": "pages/rent/rent",
+        "text": "我要租赁",
+        "iconPath": "images/tabBar/rent.png",
+        "selectedIconPath": "images/tabBar/rent_selected.png"
+      },
+      {
+        "pagePath": "pages/second-mall/second-mall",
+        "text": "二手商城",
+        "iconPath": "images/tabBar/hire.png",
+        "selectedIconPath": "images/tabBar/hire_selected.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/tabBar/user.png",
+        "selectedIconPath": "images/tabBar/user_selected.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序地理位置的展示"
+    }
+  }
+}

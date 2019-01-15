@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "二手商城",
+  "usingComponents": {
+    "second": "/components/second/second",
+    "noresult": "/components/noresult/noresult"
+  }
+}

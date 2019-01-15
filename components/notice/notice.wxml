@@ -1,0 +1,17 @@
+<!--pages/hire/notice/notice.wxml-->
+<scroll-view scroll-y="true" scroll-top='0' class='main'>
+	<view class="head">《租赁须知》</view>
+	<view class="notice">
+		<view class="item" wx:for="{{notices}}" wx:key="{{index}}">
+			<view class="title indent">{{index+1}}、{{item.title}}</view>
+			<view class="content">
+				<view class="first indent">{{item.content}}</view>
+				<view class="children" wx:if="{{item.children}}">
+					<block wx:for="{{item.children}}" wx:key="{{index}}">
+						<view class="p indent">{{item}}</view>
+					</block>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

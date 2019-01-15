@@ -1,0 +1,10 @@
+<view>
+  <view class='auth-pic'>
+    <image src='/images/rent/search-result.png'></image>
+  </view>
+  <view class='auth-desc'>发布仪器信息需要个人认证，请点击确定前往个人认证页面</view>
+  <view class='auth-btn'>
+    <button class='btn auth-btn-login' bindtap='goToCert' hover-class='btn-hover-login'>确定</button>
+    <button class=' btn auth-btn-back' bindtap='navigateBackHome' hover-class='btn-hover-back'>返回首页</button>
+  </view>
+</view>

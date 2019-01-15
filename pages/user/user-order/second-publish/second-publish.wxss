@@ -1,0 +1,8 @@
+/* pages/user/user-hire/user-hire.wxss */
+@import "../../common.wxss";
+.container{
+  padding-bottom: 45px;
+}
+.product-wrapper .product-list {
+  align-items: center;
+}

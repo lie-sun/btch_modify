@@ -1,0 +1,11 @@
+<!--pages/authorized/authorized.wxml-->
+<view>
+  <view class='auth-pic'>
+    <image src='/images/rent/search-result.png'></image>
+  </view>
+  <view class='auth-desc'>允许微信授权后，可体验更多功能</view>
+  <view class='auth-btn'>
+    <button class='btn auth-btn-login' open-type="openSetting" hover-class='btn-hover-login'>跳转至授权页</button>
+    <button class=' btn auth-btn-back' bindtap='navigateBackHome' hover-class='btn-hover-back'>返回首页</button>
+  </view>
+</view>

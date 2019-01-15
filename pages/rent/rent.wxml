@@ -1,0 +1,145 @@
+<view class='container'>
+  <scroll-view>
+    <view class="bg_pic">
+      <image src='../../images/rent/bg_pic.png'></image>
+    </view>
+    <view class="box-wrap">
+      <view class='switch-wrap'>
+        <view class='switch-item {{selectedItem==0?"active":""}}' bindtap='bindSwitch' data-index="0">
+          <text>物流寄送</text>
+        </view>
+        <view class='switch-item {{selectedItem==1?"active":""}}' bindtap='bindSwitch' data-index="1">
+          <text>到店自取</text>
+        </view>
+      </view>
+      <view class='switch-content'>
+        <view class='content'>
+          <view class='send-content switch' hidden='{{selectedItem==1}}'>
+            <view class='addr-wrap'>
+              <view class='name'>收货地址</view>
+              <view class='addr'>
+                <view class='addr-detail'>
+                  <input type="text" value="{{harvestAddress}}" placeholder="请输入收获地址" />
+                </view>
+              </view>
+            </view>
+            <view class='date-wrap'>
+              <view class='start-date'>
+                <view class='name'>起租日期</view>
+                <view class='date'>
+                  <picker mode="date" value="{{startTime}}" start="{{startTime}}" end="2080-01-01" bindchange="bindDateChange">
+                    <view class="picker">{{startTime}}</view>
+                  </picker>
+                </view>
+              </view>
+              <view class='days'>{{timeLong}}天</view>
+              <view class='end-date'>
+                <view class='name'>归还日期</view>
+                <view class='date'>
+                  <picker mode="date" value="{{endTime}}" start="{{startTime1}}" end="2080-01-01" bindchange="bindDateChange1">
+                    <view class="picker">{{endTime}}</view>
+                  </picker>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='pick-content switch' hidden='{{selectedItem==0}}'>
+            <view class='addr-wrap'>
+              <view class='name'>取货地址</view>
+              <view class='addr'>
+                <view class='addr-detail'>{{pickAddressList[1][0]}}</view>
+                <picker mode="multiSelector" bindchange="selectAddress" bindcolumnchange="selectAddressChange" value="{{addIndex}}" range="{{pickAddressList}}">
+                  <view class='select-addr'>点击选取</view>
+                </picker>
+                
+              </view>
+            </view>
+            <view class='date-wrap'>
+              <view class='start-date'>
+                <view class='name'>起租日期</view>
+                <view class='date'>
+                  <picker mode="date" value="{{startTime}}" start="{{startTime}}" end="2080-01-01" bindchange="bindDateChange">
+                    <view class="picker">{{startTime}}</view>
+                  </picker>
+                </view>
+              </view>
+              <view class='days'>{{timeLong}}天</view>
+              <view class='end-date'>
+                <view class='name'>归还日期</view>
+                <view class='date'>
+                  <picker mode="date" value="{{endTime}}" start="{{startTime1}}" end="2080-01-01" bindchange="bindDateChange1">
+                    <view class="picker">{{endTime}}</view>
+                  </picker>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='switch-btn'>
+          <view class='btn search-btn' bind:tap="searchyq">搜索仪器</view>
+          <!-- <view class='btn quick-btn'>快捷租赁</view> -->
+        </view>
+      </view>
+    </view>
+    <view class='title'>
+      <text>热门仪器精选</text>
+    </view>
+    <!-- header picker -->
+    <view class='section-picker'>
+      <view class='picker-wrapper'>
+        <picker mode="multiSelector" bindcolumnchange="multiPickerColumnChange" bindchange='pickerChange' data-id="1" value='{{multiIndex}}' range='{{multiArray}}'>
+          <text class='location {{isCityPicker?"":"hide"}}'>{{city?city:(authFlag?"未知":"定位中...")}}</text>
+          <text class='picker {{isCityPicker?"hide":""}}'>{{multiArray[1][multiIndex[1]]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+      <view class='picker-wrapper'>
+        <picker bindchange='pickerChange' data-id="2" disabled="{{factoryDisabled}}" value='{{factoryIndex}}' range='{{factory}}'>
+          <text class='{{isFactoryPicker?"":"hide"}}'>厂家</text>
+          <text class='picker {{isFactoryPicker?"hide":""}}'>{{factory[factoryIndex]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+      <view class='picker-wrapper'>
+        <picker bindchange='pickerChange' data-id="3" disabled="{{modelDisabled}}" value='{{modelIndex}}' range='{{model}}'>
+          <text class='{{isModelPicker?"":"hide"}}'>型号</text>
+          <text class='picker {{isModelPicker?"hide":""}}'>{{model[modelIndex]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+    </view>
+    <!-- select item -->
+    <view class='section-select' bindtap='selectItemTap'>
+      <view class='select-item {{tapActive==index?"active":""}}' wx:for="{{machine}}" wx:key="{{index}}" data-id="{{index}}">
+        {{item}}
+      </view>
+    </view>
+    <!-- product list -->
+    <view class='section-product'>
+      <!-- product -->
+      <product product="{{productInfo}}"></product>
+      <!-- loading more -->
+      <view wx:if='{{productInfo.length != 0 && loadMore}}'>
+        <view class='load-more' bindtap='loadMoreProduct'>点击加载更多...</view>
+      </view>
+      <!-- no search result -->
+      <noresult len="{{productInfo.length}}" flag="{{showFlag}}"></noresult>
+      <view class='reco-wrapper' wx:if="{{productReco.length!=0 && productInfo.length==0}}">
+        <view class='reco-title'>
+          <view class='line left-line'></view>
+          <view class='title'>
+            <!-- <image src='/images/rent/product_reco.png'></image> -->
+            <!-- <text>仪器推荐</text> -->
+          </view>
+          <view class='line right-line'></view>
+        </view>
+      </view>
+      <!-- product recommend -->
+      <product product="{{productReco}}" wx:if="{{productReco.length!=0 && productInfo.length==0}}"></product>
+      <!-- loading more -->
+      <view wx:if='{{productInfo.length == 0 && productReco.length != 0 && loadMoreReco}}'>
+        <view class='load-more' bindtap='loadMoreReco'>点击加载更多...</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

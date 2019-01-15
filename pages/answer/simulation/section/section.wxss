@@ -1,0 +1,14 @@
+/* pages/answer/simulation/simulation.wxss */
+@import '../../order/order.wxss';
+.header{
+  padding: 20rpx 0;
+}
+.check-error{
+  color: #169bd5;
+  font-size: 32rpx;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+.subject-item .item .btn-wrapper{
+  padding-bottom: 40rpx;
+}

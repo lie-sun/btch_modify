@@ -1,0 +1,134 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* 轮播 */
+
+.banner {
+    width: 100%;
+    height: 35vh;
+}
+
+.slide-image {
+    width: 100vw;
+    height: 35vh;
+}
+
+/* 信息 */
+
+.infos {
+    box-sizing: border-box;
+    padding: 2rpx 25rpx;
+}
+
+#name {
+    font-size: 32rpx;
+    font-weight: 600;
+}
+
+.zujin {
+    margin: 15rpx 0;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #f00;
+}
+
+.ryj {
+    font-weight: 200;
+}
+
+.yajin {
+    font-size: 32rpx;
+    color: #9D9D9D;
+    padding-bottom: 15rpx;
+}
+
+.rr {
+    float: right;
+    font-size: 32rpx;
+    color: #9D9D9D;
+    font-weight: 200;
+}
+
+/* 分界线 */
+.hr {
+    width: 100vw;
+    height: 30rpx;
+    background: #F7F7F7;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 32rpx;
+}
+
+.tab {
+    width: 25vw;
+    text-align: center;
+
+}
+.actived{
+    color: #3871A8;
+    border-bottom: 2px solid #3871A8;
+
+}
+
+.li{
+    box-sizing: border-box;
+    padding:  0 30rpx;
+    margin: 20rpx 0 ;
+    font-size: 34rpx;
+    color: #8A8989;
+}
+
+.prop{
+    width: 100%;
+}
+.xuzhi{
+    box-sizing: border-box;
+    padding: 10rpx 30rpx;
+    font-size: 30rpx;
+    margin: 15rpx 0 ;
+}
+.xuzhi view{
+    text-indent: 60rpx;
+    color: #333;
+    line-height: 1.8;
+}
+.btm {
+    width: 100vw;
+    height: 90rpx;
+}
+
+.bottom {
+    width: 100vw;
+    height: 90rpx;
+    line-height: 90rpx;
+    background: #F5ECED;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.rizujin {
+    font-weight: 600;
+    color: #f00;
+    font-size: 32rpx;
+    margin-left: 25rpx;
+}
+
+.goumai {
+    width: 30vw;
+    height: 100%;
+    float: right;
+    display: block;
+    background: #FF4B5C;
+    text-align: center;
+    color: #fff;
+    font-size: 32rpx;
+}

@@ -1,0 +1,24 @@
+.content{
+  display: flex;
+  display: -webkit-flex;
+  margin-top: 120rpx;
+  padding: 0 15px;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+.content image{
+  width: 240rpx;
+  height: 240rpx;
+  margin-bottom: 40px;
+}
+.content .success{
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+}
+.content .tip{
+  margin-bottom: 20px;
+  color: #888;
+}

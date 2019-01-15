@@ -1,0 +1,12 @@
+<!--pages/cert/cert.wxml-->
+<view class='container'>
+  <view class='pic'>
+    <image src='../../images/rent/search-result.png'></image>
+    <view class='tip'>您还没有实名认证，现在前往认证吧</view>
+  </view>
+
+  <view class='btn-wrap'>
+    <view class='btn btn-cert' bindtap='goCertPage'>前往认证</view>
+    <view class='btn btn-back' bindtap='goBackRent'>返回租赁</view>
+  </view>
+</view>

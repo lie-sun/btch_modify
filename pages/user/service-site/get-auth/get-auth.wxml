@@ -1,0 +1,54 @@
+<!--pages/user/service-site/get-auth/get-auth.wxml-->
+<view class='container'>
+  <view class='tip'>以下认证方式任选其一即可</view>
+  <view class='auth-content'>
+    <view class='auth invite'>
+      <view class='invite-content send'>
+        <view>邀请好友并给他们发送消息</view>
+        <button type='button' open-type='share' class='send-invite'>发送邀请</button>
+      </view>
+
+      <view class='invite-content'>
+        <view class='tips'>已经有5位新人好友加入</view>
+        <view class='avatar-wrapper'>
+          <image class='avatar' src='../../../../images/icon/avatar1.png'></image>
+          <image class='avatar' src='../../../../images/icon/avatar2.png'></image>
+          <image class='avatar' src='../../../../images/icon/avatar3.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='auth auth-phone'>
+      <view class='auth-wrapper'>
+        <image class='icon' src='../../../../images/icon/auth-phone.png'></image>
+        <view class='auth-desc'>
+          <view>手机号认证</view>
+          <view class='tips'>快速验证手机号码</view>
+        </view>
+      </view>
+      <view class='auth-sign' bindtap='goPhoneAuth'>{{phoneAuth==0?"未认证":(phoneAuth==8?"审核中":phoneAuth==24?"已认证":"")}}  ></view>
+    </view>
+
+    <view class='auth auth-phone'>
+      <view class='auth-wrapper'>
+        <image class='icon' src='../../../../images/icon/auth-proxy.png'></image>
+        <view class='auth-desc'>
+          <view>资质证书认证</view>
+          <view class='tips'>验证代理品牌授权证书</view>
+        </view>
+      </view>
+      <view class='auth-sign' bindtap='goProxyAuth'>{{proxyAuth==0?"未认证":(proxyAuth==8?"审核中":proxyAuth==24?"已认证":"")}}  ></view>
+    </view>
+
+    <view class='auth auth-phone'>
+      <view class='auth-wrapper'>
+        <image class='icon' src='../../../../images/icon/auth-company.png'></image>
+        <view class='auth-desc'>
+          <view>公司营业执照认证</view>
+          <view class='tips'>验证公司的营业执照</view>
+        </view>
+      </view>
+      <view class='auth-sign' bindtap='goCompanyAuth'>{{companyAuth==0?"未认证":(companyAuth==8?"审核中":companyAuth==24?"已认证":"")}}  ></view>
+    </view>
+  </view>
+</view>

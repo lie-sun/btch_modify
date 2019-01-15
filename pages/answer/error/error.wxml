@@ -1,0 +1,59 @@
+<view class="container">
+  <view class="tab-content">
+      <view class="pic">
+          <image src="{{topicPic}}" mode='widthFix'></image>
+      </view>
+      <!-- mode -->
+      <view class='header'>
+        <view class='mode'>
+          <view class='answer-mode {{mode==1?"active":""}}' bindtap='answerMode'>答题模式</view>
+          <view class='back-mode {{mode==2?"active":""}}' bindtap='bakeMode'>背题模式</view>
+        </view>
+        <view class='select' bindtap='selectTopic'>
+          <image src='../../../images/answer/select.png'></image>
+          <text class='page'>({{$index+1}}/{{topicCount}})</text>
+        </view>
+      </view>
+      <view class="subject-item">
+          <view class="item" wx:for="{{subject}}" wx:key="{{index}}" hidden='{{index!=$index}}'>
+              <view class="title">{{index+1}}、{{item.title}}</view>
+              <radio-group class="radio-group" bindchange="radioChange" data-index="{{index}}">
+                  <view class='radio-wrapper' wx:for="{{item.topic}}" wx:key="{{index}}" wx:for-item="tp">
+                    <label class='radio {{(!backAnswer && item.correct==tp.value && selectTopicArray[$index] == item.correct)?"correct":(!backAnswer && selectTopicArray[$index] && selectTopicArray[$index] != item.correct && item.correct==tp.value) ? "correct":""}} {{(selectTopicArray[$index]==tp.value && selectTopicArray[$index] != item.correct && !backAnswer)?"active":(backAnswer && item.correct == tp.value) ? "correct": ""}}'>
+                      <radio value="{{tp.value}}" disabled='{{(selectTopicArray[$index] || backAnswer)?true:false}}'/>
+                      <text class='topic'>{{tp.value}} : {{tp.desc}}</text>
+                    </label>
+                  </view>
+              </radio-group>
+              <view class="correct" hidden='{{(selectTopicArray[index] && selectTopicArray[index]!=item.correct)?false:true}}'>正确答案 : {{item.correct}}</view>
+              <view class="btn-wrapper">
+                  <view class="btn btn-prev" bindtap='goPrevTopic'>{{index==0?"返回":prev}}</view>
+                  <view class="btn btn-next" bindtap='goNextTopic'>{{txt}}</view>
+              </view>
+          </view>
+      </view>
+  </view>
+
+  <!-- topic panel -->
+  <view class='panel' hidden='{{panelShow}}'>
+    <view class='close' bindtap='closeSelectPanel'>
+      <image src='../../../images/answer/close.png'></image>
+    </view>
+    <view class='panel-content'>
+      <view class='panel-item {{(correctTopicArray[index] == 1) ? "yes" : (correctTopicArray[index] == 0) ? "no" : "bg"}}' wx:for="{{subject}}" wx:key="{{index}}" bindtap='selectToTopic' data-index="{{index}}">{{index + 1}}</view>
+    </view>
+  </view>
+
+  <!-- record -->
+  <view class='record'>
+    <view class='yes'>
+      <image class='pic yes-pic' src='../../../images/answer/yes.png'></image>
+      <text>{{yes}}</text>
+    </view>
+
+    <view class='no'>
+      <image class='pic no-pic' src='../../../images/answer/no.png'></image>
+      <text>{{no}}</text>
+    </view>
+  </view>
+</view>

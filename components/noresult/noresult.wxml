@@ -1,0 +1,10 @@
+<!--components/noresult/noresult.wxml-->
+<view wx:if="{{len==0 && flag}}" class='product-wrapper'>
+  <view class='result-wrapper'>
+    <image src='/images/rent/search-result.png'></image>
+    <view class='result-text'>
+      <view class='no'>{{noResult}}</view>
+      <view class='tip'>{{noTip}}</view>
+    </view>
+  </view>
+</view>

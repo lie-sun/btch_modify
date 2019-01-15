@@ -1,0 +1,23 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='bt-info'>
+      <image src='/images/index/banner_1.png'></image>
+      <view class='bt-name'>巴图测绘</view>
+      <view class='bt-desc'>巴图测绘—测绘仪器租赁、出租的信息交流平台</view>
+    </view>
+
+    <!-- <view class='line'></view> -->
+
+    <view class='user-desc'>
+      <view class='user-title'>该程序将获得以下授权</view>
+      <view class='user-tip'>• 获得您的公开信息（头像、昵称等）</view>
+      <view class='user-tip-cancel'>(取消授权你可能错过很多功能哦~)</view>
+    </view>
+
+    <view class='btn-wrapper'>
+      <view class='btn btn-home' bindtap='goBackHome'>返回首页</view>
+      <view class='btn btn-auth' bindtap='bindAuth'>立即授权</view>
+    </view>
+  </view>
+</view>

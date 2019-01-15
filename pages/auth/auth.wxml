@@ -1,0 +1,73 @@
+<!--pages/auth/auth.wxml-->
+<view class='container'>
+  <scroll-view scroll-y>
+    <view class='auth-wrapper'>
+      <form bindsubmit="formSubmit">
+        <!-- user name -->
+        <view class='weui-cells__wrapper'>
+          <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">真实姓名</view>
+                </view>
+                <view class="weui-cell__ft">
+                    <input name="userName" class="weui-input" placeholder="请输入姓名" placeholder-class='placeholder'/>
+                </view>
+              </view>
+          </view>
+
+          <view class="weui-cells weui-cells_after-title">
+            <view class='weui-cell weui-cell_access' bindtap="chooseProductImage">
+              <view class="weui-cell__bd">身份证正面</view>
+              <view class="upload-pic weui-cell__ft">请上传</view>
+            </view>
+          </view>
+        </view>
+
+        <!-- ID Card front -->
+        <view class='id-card'>
+          <view class='card-box card-box-front'>
+            <view class='card card-front' bindtap='uploadCardFront'>
+              <view class='icon-add'>
+                <image src='/images/icon/icon-add.png'></image>
+                <view class='upload'>点击上传</view>
+              </view>
+              <view wx:for="{{frontFilePaths}}" wx:key="*this" class='card-pic-wrapper'>
+                <image src="{{item}}" class="card-pic" />
+                <!-- <progress percent="{{uploadGropress}}" hidden='{{uploadGropress==100}}'/> -->
+                <view class='mask' hidden='{{uploadGropressShow}}'></view>
+                <view hidden='{{uploadGropressShow}}' class='upload-gropress'>{{uploadGropress}}%</view>
+              </view>
+            </view>
+          </view>
+
+          <!-- ID Card back -->
+          <view class="weui-cells weui-cells_after-title weui-cells_card-back">
+            <view class='weui-cell weui-cell_access' bindtap="chooseProductImage">
+              <view class="weui-cell__bd">身份证反面</view>
+              <view class="upload-pic weui-cell__ft">请上传</view>
+            </view>
+          </view>
+          <view class='card-box'>
+            <view class='card card-back' bindtap='uploadCardBack'>
+              <view class='icon-add' hidden='{{uploadGropressBackShow}}'>
+                <image src='/images/icon/icon-add.png'></image>
+                <view class='upload'>点击上传</view>
+              </view>
+              <view wx:for="{{backFilePaths}}" wx:key="*this" class='card-pic-wrapper'>
+                <image src="{{item}}" class="card-pic" />
+                <view class='mask' hidden='{{uploadGropressBackShow}}'></view>
+                <view hidden='{{uploadGropressBackShow}}' class='upload-gropress'>{{uploadBackGropress}}%</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class='btn-submit'>
+          <button class='btn confirm' hover-class='btn-hover' formType='submit' loading='{{submitLoading}}' disabled='{{submitDisabled}}'>提交认证</button>
+          <button class='btn invite' hover-class='btn-hover-invite'>邀请朋友</button>
+        </view>
+      </form>
+    </view>
+  </scroll-view>
+</view>

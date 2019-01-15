@@ -1,0 +1,99 @@
+/* pages/user/user-account/user-account.wxss */
+.content{
+  font-size: 14px;
+}
+.content .purview{
+  padding-top: 34px;
+  padding-bottom: 25px;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .purview .purview-use{
+  color: #666;
+  font-weight: bold;
+}
+.content .purview .purview-count{
+  padding: 10px 0;
+  font-size: 20px;
+  color: #F95E5A;
+  font-weight: bold;
+}
+.content .purview .recharge{
+  width: 340rpx;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 14px;
+  border-radius:5px;
+  background-color: #3871a8;
+}
+.content .purview .btn-hover{
+  color: rgba(255,255,255,0.6);
+  background-color: #1662ab;
+}
+
+.record .record-title{
+  margin-bottom: 10px;
+  padding: 10px 25px 10px 15px;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+  background-color: #f2f1f6;
+}
+.record .record-title .active{
+  color: #353535;
+}
+.record-list{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+.record-list .list{
+  width: 100%;
+  padding: 10px 15px 10px 0;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  border-bottom: 1px solid #f2f2f2;
+}
+.record-list:first-child{
+  border-top: 0;
+}
+.record-list .record-left{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+.record-list .record-time,
+.record-list .record-left .record{
+  color: #999;
+}
+.record-list .record-tip .record-type{
+  color: #353535;
+}
+.record-list .icon-tip{
+  width: 40px;
+  height: 40px;
+  margin: 0 15px
+}
+.record-list .record-time{
+  font-size: 12px;
+}
+.record .tip{
+  padding: 0 15px;
+  font-size: 24rpx;
+  line-height: 2.4;
+}
+.record .tip .tip-bt{
+  text-align: center;
+}

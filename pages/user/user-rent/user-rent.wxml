@@ -1,0 +1,44 @@
+<!--pages/user/user-rent/user-rent.wxml-->
+<view class='container'>
+  <scroll-view>
+    <view class='content'>
+      <!-- product list -->
+      <view hidden='{{myRent.length==0}}' class='product-wrapper'>
+        <view class='product-list-wrapper'>
+          <view class='product-list' wx:for="{{myRent}}" wx:key="*this" data-goodsid="{{item.productID}}" bindtap='rentProductInfo'>
+            <view class='product-right'>
+              <!-- left image -->
+              <image class='product-pic' src='{{item.img}}'></image>
+              <!-- center product desc -->
+              <view class='product-desc'>
+                <view class='product-name'>
+                  <text class='name'>{{item.factory}}</text>
+                  <text class='factory'>{{item.model}}</text>
+                </view>
+                <view class='product-type'>
+                  <text>{{item.city}}</text>
+                  <text>{{item.type}}</text>
+                  <text>{{item.number}}台</text>
+                </view>
+              </view>
+            </view>
+            <!-- right rent status -->
+            <view class='status status-rent'>{{item.status < 0?"已下架":""}}</view> 
+          </view>
+        </view>
+      </view>
+
+      <!-- no product tip -->
+      <view wx:if='{{myRent.length==0 && flag}}'>
+        <view class='no-result'>
+          <image src='/images/rent/search-result.png'></image>
+          <view class='desc'>没有相关的租赁信息</view>
+        </view>
+      </view>
+
+      <view class='btn' bindtap='goToRent'>
+        <button class='btn-up' hover-class='btn-hover'>我要租赁</button>
+      </view>
+    </view>
+  </scroll-view>
+</view>

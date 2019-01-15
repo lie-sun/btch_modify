@@ -1,0 +1,135 @@
+<!--pages/user/service-site/add/add.wxml-->
+<view class='container'>
+  <view class='ad-pic'>
+    <image src='{{topicPic}}' mode='widthFix'></image>
+  </view>
+
+  <!-- net list -->
+  <view class='service-content'>
+      <view class='service-item'>
+        <view class='service-title'>公司名称</view>
+        <input type='text' class='content' value='{{netSiteInfo.company}}' disabled='{{companyDisabled}}' placeholder='请填写公司名称' bindinput='inputCompanyName'></input>
+        <image wx:if="{{companyDisabled}}" class='service-pic' src='../../../../images/icon/auth-yellow.png'></image>
+      </view>
+
+      <view class='service-item address-item'>
+        <view class='address'>
+          <view class='service-title'>公司地址</view>
+          <view class='content'>{{netSiteInfo.companyAddr}}</view>
+        </view>
+        <view class='content update' bindtap='selectLocation'>{{netSiteInfo.companyAddr?"点击校准":"点击添加"}} ></view>
+      </view>
+
+      <view class='service-item'>
+        <view class='service-title'>姓名</view>
+        <input type='text' class='content' bindinput='inputUserName' value='{{netSiteInfo.userName}}' placeholder='请填写姓名'></input>
+      </view>
+
+      <view class='service-item phone-item'>
+        <view class='phone'>
+          <view class='service-title'>手机号码</view>
+          <input type='text' class='content' focus='{{phoneFocus}}' disabled='{{phoneDisabled}}' bindinput='getInputPhone' value='{{netSiteInfo.userPhone}}' placeholder='请填写手机号'></input>
+        </view>
+        <view wx:if="{{!phoneDisabled}}">
+          <view class='send-code' catchtap='sendCheckCode' hidden='{{!sendCodeBtn}}'>发送验证码</view>
+          <view class='send-code second' hidden='{{sendCodeBtn}}'>{{second}}秒后可重发</view>
+        </view>
+        <view class='content' bindtap='updatePhone' hidden='{{!phoneDisabled}}'>修改 ></view>
+      </view>
+
+      <view class='service-item' wx:if="{{!phoneDisabled}}">
+        <view class='service-title'>填写验证码</view>
+        <view class='content'>
+          <input type='text' placeholder='此处填写验证码' bindinput='inputPhoneCode'></input>
+        </view>
+      </view>
+
+      <view class='service-item proxy-item'>
+        <view class='proxy-wrapper'>
+          <view class='service-title'>代理品牌<text style='font-size:26rpx;'>(点击黄色字体可删除)</text></view>
+          <view class='content proxy-product'>
+            <view class='product' wx:for="{{netSiteInfo.proxyProduct}}" wx:key="{{index}}">{{item}}</view>
+            <view class='product product-add' wx:for="{{proxy}}" wx:key="*this" wx:for-item="proxy" data-index="{{index}}" bindtap='deleteProxyItem'>{{proxy}}</view>
+          </view>
+          <!--<text class='tip'>*注：无代理品牌请选择经销商</text>-->
+        </view>
+        
+        <picker bindchange='pickerBrand' range='{{brand}}'>
+          <view class='content update'>添加 ></view>
+        </picker>
+      </view>
+
+      <!-- <view class='service-item'>
+        <view class='service-title'>添加产品</view>
+        <input type='text' class='content' value='{{addProduct}}' bindinput='inputAddProduct' placeholder='请填写添加的产品'></input>
+      </view>
+
+      <!-- 授权区域 -->
+      <view class='service-item proxy-item'>
+        <view>
+          <view class='service-title'>所在省份</view>
+          <view class='auth-content'>
+            <view class='area' wx:if="{{netSiteInfo.authAreas!=''}}">{{netSiteInfo.authAreas}}</view>
+            <view class='auth-area' wx:if="{{authArea!=''}}">{{authArea}}</view>
+          </view>
+        </view>
+        <picker mode="selector" disabled='{{provinceDisabled}}' bindchange='pickerAreaChange' value='{{multiIndex[0]}}' range='{{multiArray[0]}}'>
+          <view class='content {{provinceDisabled?"gray":""}}'>选择 ></view>
+        </picker>
+      </view>
+
+      <!-- 申请区域 -->
+      <view class='service-item proxy-item'>
+        <view>
+          <view class='service-title'>申请区域<text style='font-size:26rpx;'>(点击黄色字体可删除)</text></view>
+          <view class='auth-content'>
+            <view class='area' wx:for="{{netSiteInfo.authArea}}" wx:key="{{index}}">{{item}}</view>
+            <view class='auth-area' wx:for="{{authAreas}}" wx:key="*this" data-index="{{index}}" bindtap='deleteItem'>{{item}}</view>
+          </view>
+        </view>
+        <picker mode="multiSelector" bindcolumnchange="multiPickerColumnChange"  bindchange='pickerAreasChange' value='{{multiIndexs}}' range='{{multiArray}}'>
+          <view class='content'>选择 ></view>
+        </picker>
+      </view>
+
+      <!-- 授权期限 -->
+      <!-- <view class='service-item proxy-item'>
+        <view>
+          <view class='service-title'>授权截止日期（必填）</view>
+          <view class='date' style='font-size:28rpx;'>{{netSiteInfo.authDate}}</view>
+        </view>
+        <picker bindchange='pickerChange' data-id="4" mode="date" start="{{currentDate}}" end="2099-12-31">
+          <view class='content'>选择日期 ></view>
+        </picker>
+      </view> -->
+
+      <!-- <view class='service-item' hidden="{{isSelectJXS}}">
+        <view class='service-title'>授权证书</view>
+        <view class='auth-box' bindtap='uploadAuthImage' wx:if="{{!uploadFlag}}">
+          <image src='../../../../images/icon/icon-photo.png'></image>
+          <view>上传授权证书</view>
+        </view>
+        <view wx:if="{{uploadFlag}}" class='pic-box' bindtap='previewAuthImage'>
+          <image catchtap='delUploadPic' class='del_pic' src='../../../../images/hire/del.png'></image>
+          <image src='{{authCertUrl}}'></image>
+        </view>
+      </view> -->
+
+      <view class='service-item' wx:if="{{licenseFlag}}">
+        <view class='service-title'>营业执照</view>
+        <view class='auth-box' wx:if="{{!uploadPersonFlag}}" bindtap='uploadPersonAuthImage'>  
+          <image src='../../../../images/icon/icon-photo.png'></image>
+          <view>上传授权证书</view>
+        </view>
+        <view wx:if="{{uploadPersonFlag}}" class='pic-box' bindtap='previewPersonImage'>
+          <image catchtap='delUploadPersonPic' class='del_pic' src='../../../../images/hire/del.png'></image>
+          <image src='{{authPersonUrl}}'></image>
+        </view>
+      </view>
+  </view>
+
+  <view class='button-wrapper'>
+    <button class='confirm' hover-class='btn-hover-confirm' bindtap='submitNetInfo'>提交申请</button>
+    <!-- <button hidden='{{goOnAdd}}' bindtap='goOnAdd' class='add' hover-class='btn-hover-add' >继续添加</button> -->
+  </view>
+</view>

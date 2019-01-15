@@ -1,0 +1,42 @@
+<!--pages/mall/main.wxml-->
+<view>
+  <view class='header'>
+    <view class='block header-classify' bindtap='bindSortList'>
+      <image class='icon' src='../../images/mall/icon-panel.png'></image>
+      <text>分类列表</text>
+    </view>
+
+    <view class='block header-net' bindtap='bindGoServiceNet'>
+      <image class='icon' src='../../images/mall/icon-net.png'></image>
+      <text>服务网点</text>
+    </view>
+  </view>
+
+  <view class='product-wrapper'>
+    <view class='product-item' wx:for="{{product}}"  wx:key="{{index}}">
+      <view class='item-title'>
+        <view class='item-name'>{{item.type}}</view>
+        <view class='item-more' bindtap='bindProductType' data-index="{{index}}">查看更多>></view>
+        <!-- <view class='item-more' bindtap='bindProductType' data-index="{{index}}" wx:if="{{item.list.length>2}}">查看更多>></view> -->
+      </view>
+
+      <view class='item-content'>
+        <view class='item-block' bindtap='bindProductDetail' data-id="{{list.productID}}"  wx:for="{{item.list}}" wx:key="*this" wx:for-item="list">
+          <image class='item-pic' src='{{list.img[0]}}'></image>
+          <view class='item-wrapper'>
+            <view class='item-desc'>
+              <text>{{list.factory}}</text>
+              <text class='type'>{{list.model}}</text>
+            </view>
+            <view class='item-detail'>￥详情点击</view>
+            <!-- <view class='item-list'>
+              <view class='list'>太原</view>
+              <view class='list'>V60</view>
+              <view class='list'>68台</view>
+            </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

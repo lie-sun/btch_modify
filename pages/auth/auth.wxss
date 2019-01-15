@@ -1,0 +1,145 @@
+/* pages/auth/auth.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  font-size: 32rpx;
+  background-color: #fff;
+}
+scroll-view{
+  background-color: #fff;
+}
+.weui-cell{
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+.weui-cells__wrapper{
+  width: 100%;
+  margin-bottom: 10px; 
+  background-color: #fff;
+}
+.weui-cells {
+  height: 50px;
+  line-height: 50px;
+  margin: 0 15px;
+  padding: 0px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+.weui-cell__ft .weui-input{
+  color: #353535;
+}
+.weui-cells::before{
+    border: none; 
+}
+.weui-cells_card-back{
+  margin-bottom: 10px;
+}
+.id-card{
+  margin-bottom: 25px;
+}
+.id-card .card-box{
+  padding: 0 20px;
+}
+.id-card .card-box-front{
+  margin-bottom: 10px;
+}
+.id-card .card-box .card{
+  width: 100%;
+  height: 420rpx;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  position: relative;
+}
+.id-card .card-box .card .card-pic,
+.id-card .card-box .card .card-pic-wrapper{
+  width: 100%;
+  height: 100%;
+}
+.id-card .card-box .card .card-pic-wrapper .mask{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.5);
+}
+.id-card .card-box .card .card-pic-wrapper .upload-gropress{
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-size: 32rpx;
+  transform: translate(-50%,-50%);
+}
+.id-card .card-box .card .card-pic{
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  border-radius: 8px;
+  display: block;
+}
+.id-card .card-box .card .icon-add{
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  color: #999;
+}
+.id-card .card-box .card .icon-add image{
+  width: 64rpx;
+  height: 64rpx;
+}
+.btn-submit{
+  padding: 0 15px;
+}
+.btn-submit .btn{
+  margin-bottom: 40px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px;
+  color: #fff;
+  border-radius:5px;
+}
+.btn-submit .confirm{
+  margin-bottom: 10px;
+  background-color: #3871a8;
+}
+.btn-submit .invite{
+  background-color: #ff575c;
+}
+.btn-submit button.btn-hover{
+  color: rgba(255,255,255,0.6);
+  background-color: #256aad;
+}
+.btn-submit button.btn-hover-invite{
+  color: rgba(255,255,255,0.6);
+  background-color: #f93c42;
+}
+.btn-submit button[disabled][loading]{
+  color: rgba(255,255,255,0.6);
+  background-color: #256aad;
+}
+.desc{
+  padding: 0 15px;
+  font-size: 28rpx;
+}

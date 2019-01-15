@@ -1,0 +1,14 @@
+<!--pages/rent/fail/fail.wxml-->
+<view class='container'>
+  <view class='content'>
+    <image src='/images/rent/search-result.png'></image>
+    <view class='success'>扣除失败</view>
+    <view class='tip'>{{errorMsg}}</view>
+    <view class='enter-rent'>
+      <button class='btn' bindtap='goPayScore' hover-class='btn-hover-pay'>现在充值</button>
+    </view>
+    <view class='enter-rent'>
+      <button class='btn back' bindtap='goBack' hover-class='btn-hover-back'>返回</button>
+    </view>
+  </view>
+</view>

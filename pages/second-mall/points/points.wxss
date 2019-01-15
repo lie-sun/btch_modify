@@ -1,0 +1,9 @@
+/* pages/rent/points/points.wxss */
+@import "../../rent/common.wxss";
+.content .enter-rent .btn.btn-dial{
+  background-color: #ff575c;
+}
+.btn-hover-dial{
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #ff4349;
+}

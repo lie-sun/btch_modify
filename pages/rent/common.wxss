@@ -1,0 +1,56 @@
+.content{
+  display: flex;
+  display: -webkit-flex;
+  margin-top: 120rpx;
+  padding: 0 15px;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+.content image{
+  width: 240rpx;
+  height: 240rpx;
+  margin-bottom: 40px;
+}
+.content .success{
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+}
+.content .tip{
+  margin-bottom: 20px;
+  color: #888;
+}
+.content .enter-rent{
+  width: 100%;
+}
+.content .enter-rent .btn{
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 16px;
+  background-color: #3871a8;
+}
+.content .back-home{
+  color: #3871a8;
+  font-size: 12px;
+}
+.content .enter-rent .back{
+  color: #3871a8;
+  background-color: #e4e4e4;
+}
+.content .enter-rent button.btn-hover{
+  color: rgba(255,255,255,0.6);
+  background-color: #256aad;
+}
+.content .enter-rent button.btn-hover-pay{
+  color: rgba(255,255,255,0.6);
+  background-color: #256aad;
+}
+.content .enter-rent button.btn-hover-back{
+  color: rgba(52,120,247,0.6);
+  background-color: #d6d4d4;
+}

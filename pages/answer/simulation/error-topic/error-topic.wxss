@@ -1,0 +1,2 @@
+/* pages/answer/simulation/error-topic/error-topic.wxss */
+@import '../../order/order.wxss';

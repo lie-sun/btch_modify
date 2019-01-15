@@ -1,0 +1,90 @@
+<view class='container'>
+    <!-- header picker -->
+    <view class='section-picker'>
+      <view class='picker-wrapper'>
+        <picker mode="selector" bindchange='pickerChange' data-id="1" value='{{multiIndex[0]}}' range='{{multiArray[0]}}'>
+          <text class='location {{isCityPicker?"":"hide"}}'>{{province?province:(authFlag?"未知":"定位中...")}}</text>
+          <text class='picker {{isCityPicker?"hide":""}}'>{{province}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+
+      <view class='picker-wrapper'>
+        <picker mode="selector" bindchange='pickerChange' data-id="2" value='{{multiIndex[1]}}' disabled="{{cityDisabled}}" range='{{multiArray[1]}}' bindtap='selectProvince'>
+          <text class='location {{isCityPicker?"":"hide"}}'>{{city?city:(authFlag?"未知":"定位中...")}}</text>
+          <text class='picker {{isCityPicker?"hide":""}} {{city=="城市"?"gray":""}}'>{{city}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+
+      <!-- <view class='picker-wrapper'>
+        <picker bindchange='pickerChange' data-id="3" value='{{factoryIndex}}' range='{{factory}}'>
+          <text class='picker'>{{factory[factoryIndex]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view> -->
+      <!-- <view class='picker-wrapper'>
+        <picker value='{{multiIndexs}}' range='{{multiArrays}}' mode="multiSelector" bindcolumnchange="multiPickerColumnChange"  bindchange='pickerChange' data-id='3'>
+          <text class='location {{isAreasPicker?"":"hide"}}'>代理区域</text>
+          <text class='picker {{isAreasPicker?"hide":""}}'>{{areas}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view> -->
+    </view>
+
+    <!-- net list -->
+    <view class='service-content'>
+      <view class='service-item' wx:for="{{service}}" wx:key="{{index}}" wx:for-item="net">
+        <view class='item company-item'>
+          <image src='../../../images/icon/icon-company.png'></image>
+          <view class='company'>
+            <view class='company-name'>{{net.company}}</view>
+            <!-- <view class='auth {{net.status==24?"auth-bg":(net.status==1?"auth-bgc":"")}}' data-auth="{{index}}" catchtap='getAuth'>{{net.status==24?"已认证":(net.status==1?"领取认证":net.status==8?"待审核":"")}}</view> -->
+          </view>
+        </view>
+
+        <!-- <view class='item product-item'>
+          <image src='../../../images/icon/icon-product.png'></image>
+          <view class='proxy'>
+            <view class='proxy-name'>代理产品：</view>
+            <view class='proxy-wrapper'>
+              <view class='proxy-item' wx:for="{{net.proxy}}" wx:key="{{index}}" wx:for-item="proxy">{{proxy.product}}{{proxy.brand}}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class='item area-item'>
+          <image src='../../../images/icon/icon-area.png'></image>
+          <view class='proxy'>
+            <view class='proxy-name'>授权区域：</view>
+            <view class='proxy-wrapper'>
+              <view class='proxy-item' wx:for="{{net.proxy}}" wx:key="{{index}}" wx:for-item="auth">{{auth.area}}</view>
+            </view>
+          </view>
+        </view> -->
+
+        <view class='item address-item'>
+          <image src='../../../images/icon/icon-address.png'></image>
+          <view class='address'>
+            <view class='address-detail'>{{net.addr}}</view>
+            <view class='address-go' bindtap='goToAddress' data-index="{{index}}">点击前往>></view>
+          </view>
+        </view>
+
+        <view class='item concat-item'>
+          <image src='../../../images/icon/icon-phone.png'></image>
+          <view class='username'>{{net.name}}</view>
+          <view class='phone-part'>
+            <image src='../../../images/icon/icon-call.png'></image>
+            <view class='phone' bindtap="viewPhoneNum" data-id="{{index}}">{{net.phone}}</view>  
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if='{{isHasData && service.length == 0}}' class='no-result'>暂无该地区网点信息</view>
+
+    <view class='btn'>
+      <button class='btn-up' hover-class='btn-hover' bindtap='goToAddNet'>合作加盟</button>
+    </view>
+</view>

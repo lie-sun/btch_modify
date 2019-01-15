@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="select-btn">
+        <view class="btn" bindtap='randomGOTopic'>随机模拟考</view>
+    </view>
+    <view class="select-list">
+        <view class="list" wx:for="{{chapter}}" wx:key="{{key}}" bindtap='selectChapter' data-index="{{index}}">
+          <view class='section'>{{item.section}}</view>
+        </view>
+    </view>
+</view>

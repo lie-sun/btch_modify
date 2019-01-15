@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="select-btn">
+        <view class="btn">专项练习</view>
+    </view>
+    <view class="select-list">
+        <view class="list" wx:for="{{chapter}}" wx:key="*this" bindtap='selectChapter' data-index="{{index}}">
+          <view class='section'>{{item.section}}</view>
+        </view>
+    </view>
+</view>

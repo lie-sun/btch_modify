@@ -1,0 +1,26 @@
+/* pages/hire/notice/notice.wxss */
+scroll-view.main {
+	min-height: 100%;
+	text-align: left;
+	font-size: 12px;
+	width: 95%;
+	margin: 0 auto;
+}
+.head {
+  padding: 10px 0;
+	font-size: 14px;
+	text-align: center;
+}
+.main .notice{
+	line-height: 2;
+}
+.main .notice .title{
+  font-size: 14px;
+  font-weight: bold;
+}
+.indent {
+	text-indent: 2em;
+}
+.children {
+	margin-top: 12px;
+}

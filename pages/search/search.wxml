@@ -1,0 +1,82 @@
+<view class='container'>
+  <scroll-view>
+    <!-- header picker -->
+    <view class='section-picker'>
+      <view class='picker-wrapper'>
+        <picker mode="multiSelector" bindcolumnchange="multiPickerColumnChange" bindchange='pickerChange' data-id="1" value='{{multiIndex}}' range='{{multiArray}}'>
+          <text class='location {{isCityPicker?"":"hide"}}'>{{city?city:(authFlag?"未知":"定位中...")}}</text>
+          <text class='picker {{isCityPicker?"hide":""}}'>{{multiArray[1][multiIndex[1]]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+      <view class='picker-wrapper'>
+        <picker bindchange='pickerChange' data-id="2" disabled="{{factoryDisabled}}" value='{{factoryIndex}}' range='{{factory}}'>
+          <text class='{{isFactoryPicker?"":"hide"}}'>厂家</text>
+          <text class='picker {{isFactoryPicker?"hide":""}}'>{{factory[factoryIndex]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+      <view class='picker-wrapper'>
+        <picker bindchange='pickerChange' data-id="3" disabled="{{modelDisabled}}" value='{{modelIndex}}' range='{{model}}'>
+          <text class='{{isModelPicker?"":"hide"}}'>型号</text>
+          <text class='picker {{isModelPicker?"hide":""}}'>{{model[modelIndex]}}</text>
+          <image src='/images/rent/arrow-down.png'></image>
+        </picker>
+      </view>
+    </view>
+    <!-- select item -->
+    <view class='section-select' bindtap='selectItemTap'>
+      <view class='select-item {{tapActive==index?"active":""}}' wx:for="{{machine}}" wx:key="{{index}}" data-id="{{index}}">
+        {{item}}
+      </view>
+    </view>
+    <!-- product list -->
+    <view class='section-product'>
+      <!-- product -->
+      <view class="pros">
+        <block wx:for="{{productInfo}}" wx:key="index">
+          <view class="product" data-index="{{index}}" bind:tap="proclick">
+            <image src="{{item.img}}" class="proimg" />
+            <view class="infos">
+              <view class="names">
+                {{item.factory}}
+                <text class="yajin">押金{{item.deposit}}元</text>
+              </view>
+              <view class="price">￥{{item.rent_day}}/台 <text class="rzj">(日租金)</text></view>
+              <view class="other">
+                <text class="add tts">{{item.city}}</text>
+                <text class="tts model">{{item.model}}</text>
+                <text class="tts taishu">{{item.number}}台</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <!-- loading more -->
+      <view wx:if='{{productInfo.length&&loadMore}}'>
+        <view class='load-more' bindtap='loadMoreProduct'>点击加载更多...</view>
+      </view>
+      <!-- no search result -->
+      <view class="noresult" wx:if="{{productInfo.length==0}}">
+        <image class="noreimg" src="/images/rent/search-result.png"></image> <view class="nore">没有结果</view>
+        <view class="noo">暂无相关租凭仪器</view>
+      </view>
+      <view class='reco-wrapper' wx:if="{{productReco.length!=0 && productInfo.length==0}}">
+        <view class='reco-title'>
+          <view class='line left-line'></view>
+          <view class='title'>
+            <image src='/images/rent/product_reco.png'></image>
+            <text>仪器推荐</text>
+          </view>
+          <view class='line right-line'></view>
+        </view>
+      </view>
+      <!-- product recommend -->
+      <product product="{{productReco}}" wx:if="{{productReco.length!=0 && productInfo.length==0}}"></product>
+      <!-- loading more -->
+      <view wx:if='{{productInfo.length == 0 && productReco.length == 0 && loadMoreReco}}'>
+        <view class='load-more' bindtap='loadMoreReco'>点击加载更多...</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

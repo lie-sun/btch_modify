@@ -1,0 +1,176 @@
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.yiqi {
+    display: flex;
+}
+
+.img {
+    width: 28vw;
+    height: 28vw;
+    display: block;
+    margin: 20rpx;
+    border: 1px solid #ddd;
+}
+
+.info {
+    margin-top: 20rpx;
+    line-height: 1.8;
+}
+
+.name {
+    font-size: 32rpx;
+}
+
+.cp {
+    background: #8F7878;
+    color: #fff;
+    padding: 4rpx 10rpx;
+    border-radius: 4rpx;
+
+}
+
+.price {
+    font-weight: 600;
+    font-size: 32rpx;
+    color: rgb(231, 6, 6);
+}
+
+#time {
+    font-weight: 200;
+}
+
+.yajin,
+.kucun {
+    font-size: 30rpx;
+    color: rgb(199, 199, 199);
+}
+
+.li {
+    font-size: 34rpx;
+    box-sizing: border-box;
+    padding: 2rpx 40rpx;
+    line-height: 2.5;
+    border-bottom: 1px solid #ddd;
+}
+
+.numbers {
+    float: right;
+}
+
+#number {
+    display: inline-block;
+    margin: 0 20rpx;
+}
+
+.jj {
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 38rpx;
+    text-align: center;
+    border-radius: 4rpx;
+    border: 1px solid #ddd;
+
+}
+
+.yhfs {
+    float: right;
+    margin-right: 25rpx;
+}
+
+.rrs {
+    float: right;
+    margin-right: 15rpx;
+}
+
+radio {
+    transform: scale(0.8)
+}
+
+.addresss {
+    margin-left: 40rpx;
+}
+
+/* 底部下单 */
+.bm {
+    width: 100vw;
+    height: 120rpx;
+}
+
+.bottom {
+    width: 100vw;
+    height: 100rpx;
+    line-height: 100rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding-left: 20rpx;
+    background: #F4EBEC;
+    color: #f00;
+    font-weight: 600;
+}
+
+.xdbtn {
+    width: 200rpx;
+    height: 100%;
+    text-align: center;
+    float: right;
+    background: #FF4B5C;
+    color: #fff;
+    font-size: 32rpx;
+    font-weight: 200;
+}
+
+.shu {
+    width: 8rpx;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 15rpx 0;
+    display: inline-block;
+    background: #000;
+    vertical-align: middle;
+    border-radius: 4rpx;
+    margin-right: 10rpx;
+}
+
+/* shijian  */
+.date-wrap{
+  margin-bottom: 20rpx;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #222;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 8rpx
+}
+
+.switch-content .content .switch .addr .addr-detail {
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.switch-content .content .switch .addr .select-addr {
+  color: #b87e2a;
+}
+
+ .days {
+  height:50rpx;
+  padding:  2rpx 15rpx;
+  border: 1px solid #bbb;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.names {
+  text-align: right;
+}

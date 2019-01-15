@@ -1,0 +1,18 @@
+/* pages/certification/certification.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+.weui-cells{
+  line-height: 1.8;
+  font-size: 32rpx;
+}
+.weui-cell::before,
+.weui-cells::before,
+.weui-cells::after{
+  border: none;
+}
+.weui-cells .weui-cell:first-child{
+  margin: 10px 0;
+}
